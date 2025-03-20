@@ -225,47 +225,53 @@ export default function Home() {
       </section>
 
       {/* Service Categories Section */}
-      <section className="py-12 md:py-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/70 to-primary/90"></div>
+<section className="py-12 md:py-16 relative overflow-hidden">
+  {/* Background Gradient */}
+  <div className="absolute inset-0 bg-gradient-to-b from-primary/70 to-primary/90 pointer-events-none"></div>
 
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <h2 className="section-title">OUR CLEANING SERVICES</h2>
-          </motion.div>
+  {/* Container */}
+  <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    {/* Section Title */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      className="text-center"
+    >
+      <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8 tracking-wide">
+        OUR CLEANING SERVICES
+      </h2>
+    </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-            <EnhancedServiceCategoryCard
-              title="RESIDENTIAL"
-              description="Professional home cleaning services tailored to your schedule."
-              imageSrc="/residential-cleaning.jpg"
-              href="/services/residential"
-              index={0}
-            />
+    {/* Service Categories Grid */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <EnhancedServiceCategoryCard
+        title="RESIDENTIAL"
+        description="Professional home cleaning services tailored to your schedule."
+        imageSrc="/residential-cleaning.jpg"
+        href="/services/residential"
+        index={0}
+      />
 
-            <EnhancedServiceCategoryCard
-              title="COMMERCIAL"
-              description="Expert cleaning solutions for businesses and offices."
-              imageSrc="/commercial-cleaning.jpg"
-              href="/services/commercial"
-              index={1}
-            />
+      <EnhancedServiceCategoryCard
+        title="COMMERCIAL"
+        description="Expert cleaning solutions for businesses and offices."
+        imageSrc="/commercial-cleaning.jpg"
+        href="/services/commercial"
+        index={1}
+      />
 
-            <EnhancedServiceCategoryCard
-              title="LANDLORD/REALTORS"
-              description="Specialized cleaning for property showings and tenant transitions."
-              imageSrc="/realtor-cleaning.jpg"
-              href="/services/realtor"
-              index={2}
-            />
-          </div>
-        </div>
-      </section>
-
+      <EnhancedServiceCategoryCard
+        title="LANDLORD/REALTORS"
+        description="Specialized cleaning for property showings and tenant transitions."
+        imageSrc="/realtor-cleaning.jpg"
+        href="/services/realtor"
+        index={2}
+      />
+    </div>
+  </div>
+</section>
       {/* Popular Services Section */}
       <section className="section-padding relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/90 to-primary/70"></div>
