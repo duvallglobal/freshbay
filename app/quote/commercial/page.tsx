@@ -21,7 +21,7 @@ import { format } from "date-fns"
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
   email: z.string().email({ message: "Please enter a valid email address." }),
-  phone: z.string().min(10, { message: "Please enter a valid phone number." }),\
+  phone: z.string().min(10, { message: "Please enter a valid phone number." }),
   companyName: z.string().min(2  { message: "Please enter a valid phone number." }),
   companyName: z.string().min(2, { message: "Company name must be at least 2 characters." }),
   address: z.string().min(5, { message: "Please enter your business address." }),
