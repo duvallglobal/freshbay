@@ -22,7 +22,7 @@ export function EnhancedCTASection({
   secondaryButtonLink,
 }: EnhancedCTASectionProps) {
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section className="py-12 md:py-20 relative overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/90"></div>
 
@@ -43,11 +43,6 @@ export function EnhancedCTASection({
       <motion.div
         className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-secondary/5 blur-3xl"
         animate={{
-          x: [0, -70, 0],
-          y: [0, -40, 0],
-        }}
-        transition={{
-          duration: 10,
           x: [0, -70, 0],
           y: [0, -40, 0],
         }}
@@ -91,7 +86,7 @@ export function EnhancedCTASection({
                 asChild
                 size="lg"
                 variant="secondary"
-                className="text-lg px-8 py-6 rounded-full shadow-glow-strong shine"
+                className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 rounded-full shadow-glow-strong shine w-full sm:w-auto"
               >
                 <Link href={primaryButtonLink}>
                   <span className="flex items-center gap-2">
@@ -128,7 +123,7 @@ export function EnhancedCTASection({
                 asChild
                 size="lg"
                 variant="outline"
-                className="text-lg px-8 py-6 rounded-full bg-transparent text-white border-white hover:bg-white/10 transition-colors duration-300"
+                className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 rounded-full bg-transparent text-white border-white hover:bg-white/10 transition-colors duration-300 w-full sm:w-auto"
               >
                 <Link href={secondaryButtonLink}>{secondaryButtonText}</Link>
               </Button>

@@ -28,7 +28,7 @@ export function ServiceNavigation({ category, service }: ServiceNavigationProps)
   }
 
   return (
-    <div className="bg-footer py-4 mt-20">
+    <div className="bg-footer py-4 pt-6 mt-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <nav className="flex items-center text-sm text-white/70">
           <Link href="/" className="hover:text-secondary">

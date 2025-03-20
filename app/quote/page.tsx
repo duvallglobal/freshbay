@@ -8,7 +8,7 @@ export default function QuotePage() {
 
   return (
     <div className="flex min-h-screen flex-col">
-      <section className="bg-primary py-16 mt-20">
+      <section className="bg-primary py-24 pt-32 mt-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="text-4xl font-extrabold tracking-tight text-secondary sm:text-5xl">

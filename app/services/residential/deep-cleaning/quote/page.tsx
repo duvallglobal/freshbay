@@ -130,7 +130,7 @@ export default function DeepCleaningQuotePage() {
 
   return (
     <div className="flex min-h-screen flex-col">
-      <ServiceNavigation category="residential" currentService="deep-cleaning" />
+      <ServiceNavigation category="residential" service="deep-cleaning" />
       {/* Hero Section */}
       <section className="bg-muted py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -485,15 +485,15 @@ export default function DeepCleaningQuotePage() {
                         <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
                         <span>Inside cabinets and drawers</span>
                       </li>
-                      {form.getValues("additionalServices")?.length > 0 && (
+                      {(form.getValues("additionalServices") || []).length > 0 && (
                         <li className="flex items-start gap-2">
                           <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
                           <span>
                             Additional services:{" "}
                             {form
                               .getValues("additionalServices")
-                              .map((id) => additionalServices.find((service) => service.id === id)?.label)
-                              .join(", ")}
+                              ?.map((id) => additionalServices.find((service) => service.id === id)?.label)
+                              ?.join(", ") || ""}
                           </span>
                         </li>
                       )}

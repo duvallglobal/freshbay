@@ -27,9 +27,8 @@
   }
 
   body {
-    @apply bg-primary text-foreground text-sm;
-    background-image: linear-gradient(to bottom, rgba(10, 17, 114, 0.95), rgba(10, 17, 114, 0.95)),
-      url("/molecular-bg.png");
+    @apply bg-primary text-foreground text-sm md:text-base;
+    background-image: linear-gradient(to bottom, rgba(10, 17, 114, 0.95), rgba(10, 17, 114, 0.95), rgba(5, 10, 80, 0.98));
     background-size: cover;
     background-attachment: fixed;
   }
@@ -44,29 +43,33 @@
   }
 
   h1 {
-    @apply text-2xl md:text-2xl lg:text-3xl font-bold;
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-6;
   }
 
   h2 {
-    @apply text-xl md:text-2xl font-bold;
+    @apply text-2xl md:text-3xl font-bold mb-4;
   }
 
   h3 {
-    @apply text-lg md:text-xl font-bold;
+    @apply text-xl md:text-2xl font-bold mb-3;
   }
 
   h4 {
-    @apply text-lg md:text-lg font-semibold;
+    @apply text-lg md:text-xl font-semibold mb-2;
   }
 
   p {
-    @apply leading-relaxed text-sm;
+    @apply leading-relaxed text-sm md:text-base mb-4;
+  }
+
+  section {
+    @apply py-12 md:py-16 lg:py-20;
   }
 }
 
 @layer components {
   .nav-link {
-    @apply text-white hover:text-secondary transition-colors duration-200;
+    @apply text-white hover:text-secondary transition-colors duration-200 text-sm md:text-base;
   }
 
   .cta-button {
@@ -103,11 +106,11 @@
   }
 
   .service-card {
-    @apply bg-card text-white p-6 rounded-xl shadow-glow hover:shadow-lg transition-all duration-300 border border-white/10 backdrop-blur-sm;
+    @apply bg-card text-white p-4 md:p-6 rounded-xl shadow-glow hover:shadow-lg transition-all duration-300 border border-white/10 backdrop-blur-sm mb-6;
   }
 
   .section-title {
-    @apply text-secondary text-2xl md:text-3xl font-bold text-center mb-8 relative;
+    @apply text-secondary text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12 relative;
   }
 
   .section-title::after {
@@ -116,15 +119,31 @@
   }
 
   .feature-icon {
-    @apply w-16 h-16 text-secondary mb-4;
+    @apply w-12 h-12 md:w-16 md:h-16 text-secondary mb-4;
   }
 
   .section-padding {
-    @apply py-16 md:py-24;
+    @apply py-12 md:py-16 lg:py-24;
   }
 
   .glass-card {
     @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-xl shadow-glow;
+  }
+
+  .hero-section {
+    @apply relative pt-32 pb-16 md:pb-24;
+  }
+
+  .service-section {
+    @apply py-12 md:py-16 relative overflow-hidden;
+  }
+
+  .benefits-section {
+    @apply py-12 md:py-16 relative overflow-hidden;
+  }
+
+  .cta-section {
+    @apply py-12 md:py-16 relative overflow-hidden;
   }
 }
 
