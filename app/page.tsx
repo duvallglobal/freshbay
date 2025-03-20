@@ -48,9 +48,9 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-                <h1 className="text-5xl md:text-6xl font-extrabold text-white mb-6 leading-tight text-shadow-lg">
-                  <span className="text-secondary">PROFESSIONAL</span> CLEANING SERVICES YOU CAN TRUST!
-                </h1>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-snug sm:leading-tight text-shadow-lg break-words">
+  <span className="text-secondary">PROFESSIONAL</span> CLEANING SERVICES YOU CAN TRUST!
+              </h1>
               </motion.div>
 
               <motion.div
