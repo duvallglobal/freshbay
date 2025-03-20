@@ -211,7 +211,7 @@ export default function RealtorsPage() {
                 </CardContent>
                 <CardFooter>
                   <Button asChild variant="secondary" className="w-full group">
-                    <Link href="/services/realtor/emergency-cleaning-services">
+                    <Link href="/services/realtor/emergency-cleaning">
                       <span className="flex items-center justify-center gap-2">
                         Learn More
                         <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />

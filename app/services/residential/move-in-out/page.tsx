@@ -104,12 +104,10 @@ export default function MoveInOutPage() {
             </RevealOnScroll>
             <RevealOnScroll delay={100}>
               <div className="order-1 lg:order-2 relative h-64 sm:h-80 lg:h-full rounded-lg overflow-hidden">
-                <Image
-                  src="/placeholder.svg?height=600&width=800"
-                  alt="Move-In/Move-Out Cleaning"
-                  fill
-                  className="object-cover"
-                />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-600 to-primary-800 opacity-80"></div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <CheckCircle className="h-24 w-24 text-secondary" />
+                </div>
               </div>
             </RevealOnScroll>
           </div>
@@ -300,12 +298,10 @@ export default function MoveInOutPage() {
           <div className="grid gap-12 lg:grid-cols-2 items-center">
             <RevealOnScroll>
               <div className="relative h-64 sm:h-80 lg:h-full rounded-lg overflow-hidden">
-                <Image
-                  src="/placeholder.svg?height=600&width=800"
-                  alt="Guaranteed Compliance"
-                  fill
-                  className="object-cover"
-                />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-600 to-primary-800 opacity-80"></div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <CheckCircle className="h-24 w-24 text-secondary" />
+                </div>
               </div>
             </RevealOnScroll>
             <RevealOnScroll delay={100}>

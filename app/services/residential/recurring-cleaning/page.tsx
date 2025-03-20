@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { CheckCircle } from "lucide-react"
+import { CheckCircle, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ServiceNavigation } from "@/components/service-navigation"
 import { EnhancedCTASection } from "@/components/enhanced-cta-section"
@@ -8,8 +8,10 @@ import { EnhancedCTASection } from "@/components/enhanced-cta-section"
 export default function RecurringCleaningPage() {
   return (
     <div className="flex min-h-screen flex-col">
+      <ServiceNavigation category="residential" service="recurring-cleaning" />
+
       {/* Hero Section */}
-      <section className="relative bg-primary py-20 mt-20">
+      <section className="relative bg-primary py-20">
         <div className="absolute inset-0 opacity-20 bg-[url('/placeholder.svg?height=1080&width=1920')] bg-cover bg-center mix-blend-overlay" />
         <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
@@ -20,15 +22,25 @@ export default function RecurringCleaningPage() {
               Maintain a consistently clean home with our recurring cleaning services. Choose from weekly, bi-weekly, or
               monthly schedules to suit your needs.
             </p>
-            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" variant="secondary">
-                <Link href="/quote/residential">Get a Free Quote</Link>
+            <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+              <Button
+                size="lg"
+                asChild
+                className="rounded-full text-base group transition-all duration-300 hover:scale-105"
+                variant="secondary"
+              >
+                <Link href="/quote/residential">
+                  <span className="flex items-center gap-2">
+                    Get a Free Quote
+                    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </span>
+                </Link>
               </Button>
               <Button
-                asChild
                 size="lg"
                 variant="outline"
-                className="bg-white/10 text-white border-white/20 hover:bg-white/20"
+                asChild
+                className="rounded-full bg-white/10 text-base text-white hover:bg-white/20 transition-all duration-300 hover:scale-105"
               >
                 <Link href="/book">Book Now</Link>
               </Button>
@@ -95,8 +107,13 @@ export default function RecurringCleaningPage() {
               <div className="text-4xl font-bold text-secondary mb-6">
                 20% <span className="text-white">OFF</span>
               </div>
-              <Button asChild className="w-full" variant="secondary">
-                <Link href="/quote/residential">Get a Quote</Link>
+              <Button asChild className="w-full group" variant="secondary">
+                <Link href="/quote/residential">
+                  <span className="flex items-center justify-center gap-2">
+                    Get a Quote
+                    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </span>
+                </Link>
               </Button>
             </div>
 
@@ -111,8 +128,13 @@ export default function RecurringCleaningPage() {
               <div className="text-4xl font-bold text-secondary mb-6">
                 15% <span className="text-white">OFF</span>
               </div>
-              <Button asChild className="w-full" variant="secondary">
-                <Link href="/quote/residential">Get a Quote</Link>
+              <Button asChild className="w-full group" variant="secondary">
+                <Link href="/quote/residential">
+                  <span className="flex items-center justify-center gap-2">
+                    Get a Quote
+                    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </span>
+                </Link>
               </Button>
             </div>
 
@@ -124,8 +146,13 @@ export default function RecurringCleaningPage() {
               <div className="text-4xl font-bold text-secondary mb-6">
                 10% <span className="text-white">OFF</span>
               </div>
-              <Button asChild className="w-full" variant="secondary">
-                <Link href="/quote/residential">Get a Quote</Link>
+              <Button asChild className="w-full group" variant="secondary">
+                <Link href="/quote/residential">
+                  <span className="flex items-center justify-center gap-2">
+                    Get a Quote
+                    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </span>
+                </Link>
               </Button>
             </div>
           </div>

@@ -60,7 +60,7 @@ export default function JanitorialServicesPage() {
         </AnimatedGradientBackground>
       </section>
 
-      {/* What's Included Section */}
+      {/* Service Description */}
       <section className="py-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/90 to-primary/70"></div>
         <AnimatedShape
@@ -71,6 +71,51 @@ export default function JanitorialServicesPage() {
           blur="large"
           className="absolute -top-20 -left-20"
         />
+
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-12 lg:grid-cols-2">
+            <RevealOnScroll>
+              <div className="order-2 lg:order-1">
+                <h2 className="text-3xl font-bold text-secondary mb-6">Comprehensive Janitorial Services</h2>
+                <p className="text-white/90 mb-6">
+                  Our janitorial services provide complete facility maintenance solutions for businesses of all sizes. We understand that a clean, well-maintained environment is essential for productivity, health, and creating a positive impression on clients and employees alike.
+                </p>
+                <p className="text-white/90 mb-6">Our comprehensive janitorial services include:</p>
+                <ul className="space-y-4">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="h-6 w-6 text-secondary flex-shrink-0 mt-0.5" />
+                    <span className="text-white/90">
+                      Regular maintenance cleaning on daily, weekly, or custom schedules
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="h-6 w-6 text-secondary flex-shrink-0 mt-0.5" />
+                    <span className="text-white/90">
+                      Specialized floor care, carpet cleaning, and window washing
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="h-6 w-6 text-secondary flex-shrink-0 mt-0.5" />
+                    <span className="text-white/90">Flexible scheduling to minimize disruption to your business</span>
+                  </li>
+                </ul>
+              </div>
+            </RevealOnScroll>
+            <RevealOnScroll delay={100}>
+              <div className="order-1 lg:order-2 relative h-64 sm:h-80 lg:h-full rounded-lg overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-600 to-primary-800 opacity-80"></div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <CheckCircle className="h-24 w-24 text-secondary" />
+                </div>
+              </div>
+            </RevealOnScroll>
+          </div>
+        </div>
+      </section>
+
+      {/* What's Included Section */}
+      <section className="py-16 glass-effect relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/50 to-primary/70"></div>
         <AnimatedShape
           shape="blob"
           size="medium"

@@ -8,6 +8,7 @@ import { RevealOnScroll } from "@/components/ui/reveal-on-scroll"
 import { AnimatedGradientBackground } from "@/components/ui/animated-gradient-background"
 import { AnimatedShape } from "@/components/ui/animated-shape"
 import { ServiceNavigation } from "@/components/service-navigation"
+import { EnhancedCTASection } from "@/components/enhanced-cta-section"
 
 export default function OpenHouseCleaningPage() {
   return (
@@ -60,9 +61,62 @@ export default function OpenHouseCleaningPage() {
         </AnimatedGradientBackground>
       </section>
 
-      {/* What's Included Section */}
+      {/* Service Description */}
       <section className="py-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/70 to-primary/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/90 to-primary/70"></div>
+        <AnimatedShape
+          shape="circle"
+          size="large"
+          color="#F7FF00"
+          opacity={0.05}
+          blur="large"
+          className="absolute -top-20 -left-20"
+        />
+
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-12 lg:grid-cols-2">
+            <RevealOnScroll>
+              <div className="order-2 lg:order-1">
+                <h2 className="text-3xl font-bold text-secondary mb-6">Open House Cleaning Services</h2>
+                <p className="text-white/90 mb-6">
+                  Our open house cleaning service is specifically designed to help realtors make the best possible impression during property showings. We understand that open houses are critical opportunities to showcase a property's potential and create interest among buyers.
+                </p>
+                <p className="text-white/90 mb-6">Our open house cleaning services include:</p>
+                <ul className="space-y-4">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="h-6 w-6 text-secondary flex-shrink-0 mt-0.5" />
+                    <span className="text-white/90">
+                      Thorough cleaning of all visible areas and surfaces
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="h-6 w-6 text-secondary flex-shrink-0 mt-0.5" />
+                    <span className="text-white/90">
+                      Special attention to high-traffic areas and focal points
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="h-6 w-6 text-secondary flex-shrink-0 mt-0.5" />
+                    <span className="text-white/90">Same-day service available for last-minute showings</span>
+                  </li>
+                </ul>
+              </div>
+            </RevealOnScroll>
+            <RevealOnScroll delay={100}>
+              <div className="order-1 lg:order-2 relative h-64 sm:h-80 lg:h-full rounded-lg overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-600 to-primary-800 opacity-80"></div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <CheckCircle className="h-24 w-24 text-secondary" />
+                </div>
+              </div>
+            </RevealOnScroll>
+          </div>
+        </div>
+      </section>
+
+      {/* What's Included Section */}
+      <section className="py-16 glass-effect relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/50 to-primary/70"></div>
         <AnimatedShape
           shape="square"
           size="medium"
@@ -251,6 +305,16 @@ export default function OpenHouseCleaningPage() {
           </div>
         </div>
       </section>
+
+      {/* CTA Section */}
+      <EnhancedCTASection
+        title="READY TO IMPRESS POTENTIAL BUYERS?"
+        description="Book your open house cleaning service today or get an instant quote to see how affordable professional cleaning can be."
+        primaryButtonText="BOOK NOW"
+        primaryButtonLink="/book"
+        secondaryButtonText="GET A QUOTE"
+        secondaryButtonLink="/quote/realtor"
+      />
     </div>
   )
 } 

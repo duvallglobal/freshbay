@@ -12,8 +12,10 @@ import { EnhancedCTASection } from "@/components/enhanced-cta-section"
 export default function TurnkeyServicePage() {
   return (
     <div className="flex min-h-screen flex-col">
+      <ServiceNavigation category="realtor" service="turnkey-service" />
+
       {/* Hero Section */}
-      <section className="relative mt-20 bg-footer">
+      <section className="relative bg-footer">
         <AnimatedGradientBackground intensity="medium" speed="slow">
           <div className="container relative mx-auto px-4 py-24 sm:px-6 lg:flex lg:h-[70vh] lg:items-center lg:px-8">
             <div className="mx-auto max-w-3xl text-center">

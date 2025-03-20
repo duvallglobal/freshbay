@@ -82,7 +82,7 @@ export function FooterLinks() {
           </li>
           <li>
             <Link
-              href="/services/realtor/emergency-cleaning-services"
+              href="/services/realtor/emergency-cleaning"
               className="text-muted-foreground hover:text-foreground"
             >
               Emergency Cleaning

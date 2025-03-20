@@ -13,7 +13,7 @@ import { EnhancedCTASection } from "@/components/enhanced-cta-section"
 export default function MassageParlorsPage() {
   return (
     <div className="flex min-h-screen flex-col">
-      <ServiceNavigation category="commercial" />
+      <ServiceNavigation category="commercial" service="massage-parlors" />
 
       {/* Hero Section */}
       <section className="relative bg-footer py-20">
@@ -60,7 +60,7 @@ export default function MassageParlorsPage() {
         </AnimatedGradientBackground>
       </section>
 
-      {/* What's Included Section */}
+      {/* Service Description */}
       <section className="py-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/90 to-primary/70"></div>
         <AnimatedShape
@@ -71,6 +71,51 @@ export default function MassageParlorsPage() {
           blur="large"
           className="absolute -top-20 -left-20"
         />
+
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-12 lg:grid-cols-2">
+            <RevealOnScroll>
+              <div className="order-2 lg:order-1">
+                <h2 className="text-3xl font-bold text-secondary mb-6">Massage Parlor Cleaning Services</h2>
+                <p className="text-white/90 mb-6">
+                  Our specialized massage parlor cleaning services are designed to maintain the highest standards of cleanliness and hygiene in wellness environments. We understand that massage parlors and wellness centers require meticulous attention to sanitization and a calming atmosphere.
+                </p>
+                <p className="text-white/90 mb-6">Our massage parlor cleaning services include:</p>
+                <ul className="space-y-4">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="h-6 w-6 text-secondary flex-shrink-0 mt-0.5" />
+                    <span className="text-white/90">
+                      Thorough sanitization of treatment rooms and equipment
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="h-6 w-6 text-secondary flex-shrink-0 mt-0.5" />
+                    <span className="text-white/90">
+                      Use of eco-friendly, hypoallergenic cleaning products
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="h-6 w-6 text-secondary flex-shrink-0 mt-0.5" />
+                    <span className="text-white/90">Special attention to high-touch surfaces and linens</span>
+                  </li>
+                </ul>
+              </div>
+            </RevealOnScroll>
+            <RevealOnScroll delay={100}>
+              <div className="order-1 lg:order-2 relative h-64 sm:h-80 lg:h-full rounded-lg overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-600 to-primary-800 opacity-80"></div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <CheckCircle className="h-24 w-24 text-secondary" />
+                </div>
+              </div>
+            </RevealOnScroll>
+          </div>
+        </div>
+      </section>
+
+      {/* What's Included Section */}
+      <section className="py-16 glass-effect relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/50 to-primary/70"></div>
         <AnimatedShape
           shape="blob"
           size="medium"
@@ -167,8 +212,8 @@ export default function MassageParlorsPage() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/70 to-primary/90"></div>
+      <section className="py-16 glass-effect relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/50 to-primary/70"></div>
         <AnimatedShape
           shape="square"
           size="medium"
