@@ -56,9 +56,9 @@ export default function ResidentialQuotePage() {
   function calculateQuote(data: z.infer<typeof formSchema>) {
     // Base prices for different service types
     const servicePrices = {
-      "deep-cleaning": 200,
-      "recurring-cleaning": 120,
-      "move-in-out": 250,
+      "deep-cleaning": 150,
+      "recurring-cleaning": 50,
+      "move-in-out": 200,
     }
 
     // Size multipliers
@@ -71,19 +71,19 @@ export default function ResidentialQuotePage() {
 
     // Property type adjustments
     const propertyAdjustments = {
-      apartment: 0,
+      apartment: 10,
       condo: 20,
-      house: 50,
-      townhouse: 30,
+      house: 20,
+      townhouse: 20,
     }
 
     // Bedroom and bathroom costs
     const bedroomCosts = {
-      "1": 0,
-      "2": 25,
-      "3": 50,
-      "4": 75,
-      "5+": 100,
+      "1": 25,
+      "2": 50,
+      "3": 75,
+      "4": 100,
+      "5+": 125,
     }
 
     const bathroomCosts = {
@@ -96,21 +96,21 @@ export default function ResidentialQuotePage() {
     // Frequency discounts
     const frequencyDiscounts = {
       "one-time": 1,
-      weekly: 0.8,
-      "bi-weekly": 0.85,
+      weekly: 0.7,
+      "bi-weekly": 0.8,
       monthly: 0.9,
     }
 
     // Special areas costs
     const specialAreasCosts = {
       basement: 50,
-      garage: 40,
+      garage: 80,
       patio: 30,
       windows: 60,
     }
 
     // Calculate base price
-    let basePrice = servicePrices[data.serviceType as keyof typeof servicePrices] || 150
+    let basePrice = servicePrices[data.serviceType as keyof typeof servicePrices] || 50
 
     // Apply size multiplier
     basePrice *= sizeMultipliers[data.propertySize as keyof typeof sizeMultipliers] || 1
@@ -157,7 +157,7 @@ export default function ResidentialQuotePage() {
     { id: "basement", label: "Basement" },
     { id: "garage", label: "Garage" },
     { id: "patio", label: "Patio/Deck" },
-    { id: "windows", label: "Interior Windows" },
+    { id: "windows", label: "Interior Windows/Window Seals" },
   ]
 
   return (
@@ -200,10 +200,10 @@ export default function ResidentialQuotePage() {
                             name="name"
                             render={({ field }) => (
                               <FormItem>
-                                <FormLabel className="text-white">Full Name</FormLabel>
+                                <FormLabel className="text-white">Name</FormLabel>
                                 <FormControl>
                                   <Input
-                                    placeholder="John Doe"
+                                    placeholder="Your Name Here"
                                     {...field}
                                     className="bg-white/10 text-white border-white/20"
                                   />
@@ -220,7 +220,7 @@ export default function ResidentialQuotePage() {
                                 <FormLabel className="text-white">Email</FormLabel>
                                 <FormControl>
                                   <Input
-                                    placeholder="john@example.com"
+                                    placeholder="your@email.com"
                                     {...field}
                                     className="bg-white/10 text-white border-white/20"
                                   />
@@ -348,7 +348,7 @@ export default function ResidentialQuotePage() {
                             name="bathrooms"
                             render={({ field }) => (
                               <FormItem>
-                                <FormLabel className="text-white">Number of Bathrooms</FormLabel>
+                                <FormLabel className="text-white">Number of Bathrooms- Round up for Half Baths</FormLabel>
                                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                                   <FormControl>
                                     <SelectTrigger className="bg-white/10 text-white border-white/20">
@@ -594,19 +594,19 @@ export default function ResidentialQuotePage() {
                     <ul className="space-y-2 text-left">
                       <li className="flex items-start gap-2">
                         <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-secondary" />
-                        <span className="text-white">Professional cleaning by our trained staff</span>
+                        <span className="text-white">Professional Cleaning by Our Trained Staff</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-secondary" />
-                        <span className="text-white">All cleaning supplies and equipment</span>
+                        <span className="text-white">All Cleaning Supplies and Equipment</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-secondary" />
-                        <span className="text-white">Eco-friendly cleaning products</span>
+                        <span className="text-white">Thurough Cleaning Service Every Time</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-secondary" />
-                        <span className="text-white">100% satisfaction guarantee</span>
+                        <span className="text-white">100% Satisfaction Guarantee!</span>
                       </li>
                     </ul>
                   </div>
