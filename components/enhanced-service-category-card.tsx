@@ -57,7 +57,7 @@ export function EnhancedServiceCategoryCard({
           <motion.p
             className="mb-6 text-white/90 transition-all duration-500 max-h-0 opacity-0 group-hover:max-h-24 group-hover:opacity-100"
             initial={{ opacity: 0, height: 0 }}
-            whileInView={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }} {/* Changed from opacity: 0 to 1 */}
             viewport={{ once: true }}
           >
             {description}
@@ -65,7 +65,7 @@ export function EnhancedServiceCategoryCard({
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 0, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }} {/* Changed from opacity: 0 to 1 */}
             viewport={{ once: true }}
             className="translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500"
           >
@@ -83,4 +83,3 @@ export function EnhancedServiceCategoryCard({
     </motion.div>
   )
 }
-
