@@ -56,9 +56,9 @@ export default function ResidentialQuotePage() {
   function calculateQuote(data: z.infer<typeof formSchema>) {
     // Base prices for different service types
     const servicePrices = {
-      "deep-cleaning": 150,
-      "recurring-cleaning": 50,
-      "move-in-out": 200,
+      "deep-cleaning": 50,
+      "recurring-cleaning": 25,
+      "move-in-out": 100,
     }
 
     // Size multipliers
@@ -110,7 +110,7 @@ export default function ResidentialQuotePage() {
     }
 
     // Calculate base price
-    let basePrice = servicePrices[data.serviceType as keyof typeof servicePrices] || 50
+    let basePrice = servicePrices[data.serviceType as keyof typeof servicePrices] || 30
 
     // Apply size multiplier
     basePrice *= sizeMultipliers[data.propertySize as keyof typeof sizeMultipliers] || 1
