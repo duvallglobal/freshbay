@@ -2,6 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .glass-effect {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 shadow-lg;
+  }
+  
+  .glass-effect-dark {
+    @apply bg-black/10 backdrop-blur-md border border-white/10 shadow-lg;
+  }
+
+  .glass-card {
+    @apply glass-effect rounded-xl p-6 hover:bg-white/15 transition-all duration-300;
+  }
+
+  .glass-card-dark {
+    @apply glass-effect-dark rounded-xl p-6 hover:bg-black/15 transition-all duration-300;
+  }
+
+  .glass-nav {
+    @apply glass-effect sticky top-0 z-50;
+  }
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

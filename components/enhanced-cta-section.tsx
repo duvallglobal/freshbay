@@ -25,6 +25,7 @@ export function EnhancedCTASection({
     <section className="py-12 md:py-20 relative overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/90"></div>
+      <div className="glass-effect absolute inset-4 rounded-3xl"></div>
 
       {/* Animated background elements */}
       <motion.div

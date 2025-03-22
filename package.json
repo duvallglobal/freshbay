@@ -61,8 +61,8 @@
     "zod": "latest"
   },
   "devDependencies": {
-    "@types/node": "^22",
-    "@types/react": "^19",
+    "@types/node": "^22.13.11",
+    "@types/react": "^19.0.12",
     "@types/react-dom": "^19",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.3",

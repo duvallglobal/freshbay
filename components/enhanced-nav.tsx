@@ -67,7 +67,7 @@ export function EnhancedNav() {
       animate="visible"
       variants={navVariants}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-footer shadow-lg" : "bg-footer"
+        scrolled ? "glass-nav" : "bg-transparent"
       }`}
       style={{ minHeight: '5rem' }}
     >
@@ -75,12 +75,12 @@ export function EnhancedNav() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <div className="relative h-16 w-16 mr-3">
+            <div className="relative h-20 w-20 mr-4">
               <Image
-                src="/placeholder.svg?height=64&width=64"
+                src="/placeholder.svg?height=80&width=80"
                 alt="FreshBay Logo"
-                width={64}
-                height={64}
+                width={80}
+                height={80}
                 className="object-contain"
               />
             </div>

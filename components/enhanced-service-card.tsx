@@ -33,7 +33,7 @@ export function EnhancedServiceCard({
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.5, delay: 0.1 * (index + 1) }}
       whileHover={{ y: -10 }}
-      className="h-full"
+      className="glass-card group h-full"
     >
       <div className="service-card h-full flex flex-col group">
         <div className="p-6 flex-grow">

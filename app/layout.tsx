@@ -8,6 +8,20 @@ export const metadata: Metadata = {
   description:
     "FreshBay Cleaning Co. provides top-quality cleaning services for residential and commercial properties in Towson, Maryland. From move-in/move-out cleaning to recurring services, we keep your space spotless.",
   generator: "v0.dev",
+  viewport: "width=device-width, initial-scale=1",
+  robots: "index, follow",
+  keywords: "cleaning services, Towson, Maryland, residential cleaning, commercial cleaning, move-in cleaning, move-out cleaning, professional cleaning",
+  openGraph: {
+    title: "FreshBay Cleaning Co. | Professional Cleaning Services",
+    description: "Top-quality cleaning services for residential and commercial properties in Towson, Maryland",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "FreshBay Cleaning Co.",
+    description: "Professional Cleaning Services in Towson, Maryland",
+  },
 }
 
 export default function RootLayout({
