@@ -192,6 +192,7 @@ return (
     <div className="flex min-h-screen flex-col">
       {/* Hidden form for Netlify */}
       <form name="residential-quote" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+        <input type="hidden" name="form-name" value="residential-quote" />
         <input type="text" name="name" />
         <input type="email" name="email" />
         <input type="text" name="phone" />
@@ -244,7 +245,7 @@ return (
       method="POST"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
-
+      netlify
     >
       <input type="hidden" name="form-name" value="residential-quote" />
       <input type="hidden" name="bot-field" />
