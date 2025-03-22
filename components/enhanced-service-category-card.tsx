@@ -32,7 +32,7 @@ export function EnhancedServiceCategoryCard({
     >
       <div className="group relative overflow-hidden rounded-xl h-[400px] transition-all duration-500 hover:shadow-glow">
         {/* Overlay gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/20 z-10 transition-opacity duration-500 group-hover:opacity-90" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30 z-10 transition-opacity duration-500 group-hover:opacity-95" />
 
         {/* Background image */}
         <Image
@@ -48,11 +48,11 @@ export function EnhancedServiceCategoryCard({
             {title}
           </h3>
 
-          <p className="mb-6 text-white/90 transition-all duration-500 transform-gpu opacity-0 -translate-y-4 group-hover:opacity-100 group-hover:translate-y-0">
+          <p className="mb-6 text-white/90 transition-all duration-500 transform-gpu group-hover:-translate-y-2">
             {description}
           </p>
 
-          <div className="transform-gpu transition-all duration-500 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0">
+          <div className="transform-gpu transition-all duration-500 group-hover:-translate-y-2">
             <Button 
               asChild 
               variant="secondary"

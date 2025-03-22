@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
       {/* Hero Section */}
-      <section className="relative py-32 md:py-40 overflow-hidden">
+      <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/80 to-primary/95"></div>
 
         {/* Animated background elements */}
@@ -163,7 +163,7 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="section-padding relative overflow-hidden">
+      <section className="pt-8 pb-16 md:pt-12 md:pb-20 lg:pt-16 lg:pb-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/90 to-primary/70"></div>
 
         <div className="container-custom">

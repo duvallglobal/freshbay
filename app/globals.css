@@ -48,8 +48,8 @@
       background-color: transparent;
     }
     to {
-      backdrop-filter: blur(8px);
-      background-color: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      background-color: rgba(10, 17, 114, 0.98);
     }
   }
 }
@@ -90,8 +90,26 @@
   h3,
   h4,
   h5,
-  h6 {
-    @apply font-heading tracking-tight;
+  h6,
+  p,
+  a,
+  span,
+  button,
+  input,
+  textarea,
+  select,
+  label,
+  li,
+  p,
+  a,
+  span,
+  button,
+  input,
+  textarea,
+  select,
+  label,
+  li {
+    @apply font-sans tracking-tight;
   }
 
   h1 {
@@ -121,7 +139,7 @@
 
 @layer components {
   .nav-link {
-    @apply text-white hover:text-secondary transition-colors duration-200 text-sm md:text-base;
+    @apply text-white hover:text-secondary transition-colors duration-200 text-sm md:text-base font-sans font-sans;
   }
 
   .cta-button {
@@ -138,7 +156,7 @@
   }
 
   .glass-effect {
-    @apply bg-primary/95 backdrop-blur-md border-t border-white/10;
+    @apply bg-primary/98 backdrop-blur-md border-t border-white/10;
   }
 
   .container-custom {

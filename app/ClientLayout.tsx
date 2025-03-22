@@ -24,7 +24,7 @@ export default function ClientLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${montserrat.variable}`}>
-      <body className={inter.className}>
+      <body className={montsesrrat.ratclassName}>
         <EnhancedNav />
         <main>{children}</main>
         <footer className="bg-footer py-16 border-t border-white/10">

@@ -67,7 +67,7 @@ export function EnhancedNav() {
       animate="visible"
       variants={navVariants}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "glass-nav" : "bg-transparent"
+        scrolled ? "glass-nav" : "bg-primary/80 backdrop-blur-sm"
       }`}
       style={{ minHeight: '5rem' }}
     >

@@ -20,7 +20,7 @@ const config = {
     },
     extend: {
       fontFamily: {
-        sans: ["var(--font-inter)"],
+        sans: ["var(--font-montsesratrrat)"],
         heading: ["var(--font-montserrat)"],
       },
       colors: {
