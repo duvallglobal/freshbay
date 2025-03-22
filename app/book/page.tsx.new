@@ -1,23 +1,21 @@
 "use client"
 
-import * as React from "react"
 import { useState, useEffect } from "react"
-import { format } from "date-fns"
-import { CalendarIcon, Clock, CheckCircle } from "lucide-react"
-import Link from "next/link"
+import type { JSX } from "react"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
+import { CalendarIcon, Clock, CheckCircle } from "lucide-react"
 
-import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
-import { Calendar } from "@/components/ui/calendar"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Textarea } from "@/components/ui/textarea"
+import { Calendar } from "@/components/ui/calendar"
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
+import { format } from "date-fns"
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -30,7 +28,7 @@ const formSchema = z.object({
   specialInstructions: z.string().optional(),
 })
 
-export default function BookPage(): React.ReactElement {
+export default function BookPage(): JSX.Element {
   const [submitted, setSubmitted] = useState(false)
 
   const [quoteData, setQuoteData] = useState<any>(null)
@@ -58,24 +56,26 @@ export default function BookPage(): React.ReactElement {
   })
 
   async function onSubmit(data: z.infer<typeof formSchema>) {
-    try {
-      const bookingData = quoteData ? {
-        ...data,
-        formType: 'quote-booking',
-        quoteId: quoteData.quoteId,
-        quoteAmount: quoteData.quoteAmount,
-        quoteDate: quoteData.quoteDate,
-      } : {
-        ...data,
-        formType: 'direct-booking',
-      }
+    // Include quote data if it exists
+    const bookingData = quoteData ? {
+      ...data,
+      fromQuote: true,
+      quoteId: quoteData.quoteId,
+      quoteAmount: quoteData.quoteAmount,
+      quoteDate: quoteData.quoteDate
+    } : data
 
+    try {
       const response = await fetch('/api/submit-booking', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(bookingData),
+        body: JSON.stringify({
+          ...bookingData,
+          formType: quoteData ? 'quote-booking' : 'direct-booking',
+          date: data.date.toISOString(),
+        }),
       })
 
       if (!response.ok) {
@@ -90,9 +90,9 @@ export default function BookPage(): React.ReactElement {
   }
 
   return (
-    <div className="flex min-h-screen flex-col">
+    <main className="flex min-h-screen flex-col">
       {/* Hero Section */}
-      <section className="bg-primary py-16 mt-20">
+      <div className="bg-primary py-16 mt-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="text-4xl font-extrabold tracking-tight text-secondary sm:text-5xl">
@@ -104,7 +104,7 @@ export default function BookPage(): React.ReactElement {
             </p>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* Booking Form Section */}
       <section className="py-16">
@@ -329,7 +329,6 @@ export default function BookPage(): React.ReactElement {
           </div>
         </div>
       </section>
-    </div>
+    </main>
   )
 }
-

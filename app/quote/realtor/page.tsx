@@ -54,35 +54,7 @@ export default function RealtorQuotePage() {
     },
   })
 
-  async function onSubmit(data: z.infer<typeof formSchema>) {
-    try {
-      const quote = calculateQuote(data)
-      setQuoteAmount(quote)
-
-      // Send form data to webhook
-      const response = await fetch('/api/submit-quote', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          ...data,
-          quoteAmount: quote,
-          formType: 'realtor-quote',
-          date: data.date.toISOString(),
-        }),
-      })
-
-      if (!response.ok) {
-        throw new Error('Failed to submit form')
-      }
-
-      setQuoteGenerated(true)
-    } catch (error) {
-      console.error('Error submitting form:', error)
-      // Handle error appropriately
-    }
-  }
+  // onSubmit function is defined below
 
   function calculateQuote(data: z.infer<typeof formSchema>) {
     // Base prices for different service types
