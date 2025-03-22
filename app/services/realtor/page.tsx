@@ -92,16 +92,9 @@ export default function RealtorsPage() {
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {/* Pre-Listing Cleaning */}
             <RevealOnScroll>
-              <Card className="bg-white/5 border-white/10">
+              <Card className="bg-white/5 border-white/10 rounded-lg p-4">
                 <CardHeader>
-                  <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
-                    <Image
-                      src="/placeholder.svg?height=600&width=800"
-                      alt="Pre-Listing Cleaning"
-                      fill
-                      className="object-cover transition-transform duration-500 hover:scale-105"
-                    />
-                  </div>
+                  {/* Removed Image */}
                   <CardTitle className="text-secondary mt-4">Pre-Listing Cleaning</CardTitle>
                   <CardDescription className="text-white/70">Maximize your property's appeal</CardDescription>
                 </CardHeader>
@@ -136,16 +129,9 @@ export default function RealtorsPage() {
 
             {/* Open House Cleaning */}
             <RevealOnScroll delay={100}>
-              <Card className="bg-white/5 border-white/10">
+              <Card className="bg-white/5 border-white/10 rounded-lg p-4">
                 <CardHeader>
-                  <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
-                    <Image
-                      src="/placeholder.svg?height=600&width=800"
-                      alt="Open House Cleaning"
-                      fill
-                      className="object-cover transition-transform duration-500 hover:scale-105"
-                    />
-                  </div>
+                  {/* Removed Image */}
                   <CardTitle className="text-secondary mt-4">Open House Cleaning</CardTitle>
                   <CardDescription className="text-white/70">Perfect presentation for showings</CardDescription>
                 </CardHeader>
@@ -180,16 +166,9 @@ export default function RealtorsPage() {
 
             {/* Emergency Cleaning */}
             <RevealOnScroll delay={200}>
-              <Card className="bg-white/5 border-white/10">
+              <Card className="bg-white/5 border-white/10 rounded-lg p-4">
                 <CardHeader>
-                  <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
-                    <Image
-                      src="/placeholder.svg?height=600&width=800"
-                      alt="Emergency Cleaning"
-                      fill
-                      className="object-cover transition-transform duration-500 hover:scale-105"
-                    />
-                  </div>
+                  {/* Removed Image */}
                   <CardTitle className="text-secondary mt-4">Emergency Cleaning</CardTitle>
                   <CardDescription className="text-white/70">Fast response for urgent needs</CardDescription>
                 </CardHeader>
@@ -224,16 +203,9 @@ export default function RealtorsPage() {
 
             {/* Turnkey Service */}
             <RevealOnScroll delay={300}>
-              <Card className="bg-white/5 border-white/10">
+              <Card className="bg-white/5 border-white/10 rounded-lg p-4">
                 <CardHeader>
-                  <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
-                    <Image
-                      src="/placeholder.svg?height=600&width=800"
-                      alt="Turnkey Service"
-                      fill
-                      className="object-cover transition-transform duration-500 hover:scale-105"
-                    />
-                  </div>
+                  {/* Removed Image */}
                   <CardTitle className="text-secondary mt-4">Turnkey Service</CardTitle>
                   <CardDescription className="text-white/70">Complete property preparation</CardDescription>
                 </CardHeader>
@@ -268,16 +240,9 @@ export default function RealtorsPage() {
 
             {/* Staging Cleaning */}
             <RevealOnScroll delay={400}>
-              <Card className="bg-white/5 border-white/10">
+              <Card className="bg-white/5 border-white/10 rounded-lg p-4">
                 <CardHeader>
-                  <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
-                    <Image
-                      src="/placeholder.svg?height=600&width=800"
-                      alt="Staging Cleaning"
-                      fill
-                      className="object-cover transition-transform duration-500 hover:scale-105"
-                    />
-                  </div>
+                  {/* Removed Image */}
                   <CardTitle className="text-secondary mt-4">Staging Cleaning</CardTitle>
                   <CardDescription className="text-white/70">Perfect presentation for buyers</CardDescription>
                 </CardHeader>
@@ -312,16 +277,9 @@ export default function RealtorsPage() {
 
             {/* Post-Construction */}
             <RevealOnScroll delay={500}>
-              <Card className="bg-white/5 border-white/10">
+              <Card className="bg-white/5 border-white/10 rounded-lg p-4">
                 <CardHeader>
-                  <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
-                    <Image
-                      src="/placeholder.svg?height=600&width=800"
-                      alt="Post-Construction Cleaning"
-                      fill
-                      className="object-cover transition-transform duration-500 hover:scale-105"
-                    />
-                  </div>
+                  {/* Removed Image */}
                   <CardTitle className="text-secondary mt-4">Post-Construction</CardTitle>
                   <CardDescription className="text-white/70">Final cleanup after renovations</CardDescription>
                 </CardHeader>
