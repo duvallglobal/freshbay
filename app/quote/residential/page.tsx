@@ -7,6 +7,7 @@ import { z } from "zod"
 import { CalendarIcon, CheckCircle } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
+import { QuoteActions } from "@/components/quote-actions"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
@@ -162,7 +163,7 @@ export default function ResidentialQuotePage() {
 return (
     <div className="flex min-h-screen flex-col">
       {/* Hidden form for Netlify */}
-      <form name="residential-quote" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+      <form name="residential-quote" hidden>
         <input type="hidden" name="form-name" value="residential-quote" />
         <input type="text" name="name" />
         <input type="email" name="email" />
@@ -632,32 +633,11 @@ return (
   </div>
 </CardContent>
 <CardFooter className="flex flex-col gap-4">
-  <Button
-    className="w-full bg-secondary text-primary hover:bg-secondary/90"
-    size="lg"
-    onClick={() => {
-      // Store quote data in localStorage for the booking form
-      const data = form.getValues();
-      localStorage.setItem('quoteData', JSON.stringify({
-        ...data,
-        quoteAmount: quoteAmount,
-        quoteId: Date.now().toString(),
-        quoteDate: new Date().toISOString()
-      }));
-
-      // Redirect to booking page
-      window.location.href = '/book?fromQuote=true';
-    }}
-  >
-    Book This Service
-  </Button>
-  <Button
-    variant="outline"
-    onClick={() => setQuoteGenerated(false)}
-    className="bg-white/10 text-white border-white/20 hover:bg-white/20"
-  >
-    Modify Quote
-  </Button>
+  <QuoteActions
+    quoteData={form.getValues()}
+    quoteAmount={quoteAmount}
+    onModifyQuote={() => setQuoteGenerated(false)}
+  />
 </CardFooter>
               </Card>
             )}

@@ -7,6 +7,7 @@ import { z } from "zod"
 import { CalendarIcon, CheckCircle } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
+import { QuoteActions } from "@/components/quote-actions"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
@@ -634,22 +635,11 @@ export default function RealtorQuotePage() {
                   </div>
                 </CardContent>
                 <CardFooter className="flex flex-col gap-4">
-                  <Button 
-                    onClick={() => {
-                      window.location.href = '/book?fromQuote=true'
-                    }}
-                    className="w-full bg-secondary text-primary hover:bg-secondary/90" 
-                    size="lg"
-                  >
-                    Book This Service
-                  </Button>
-                  <Button
-                    variant="outline"
-                    onClick={() => setQuoteGenerated(false)}
-                    className="bg-white/10 text-white border-white/20 hover:bg-white/20"
-                  >
-                    Modify Quote
-                  </Button>
+                  <QuoteActions
+                    quoteData={form.getValues()}
+                    quoteAmount={quoteAmount}
+                    onModifyQuote={() => setQuoteGenerated(false)}
+                  />
                 </CardFooter>
               </Card>
             )}
