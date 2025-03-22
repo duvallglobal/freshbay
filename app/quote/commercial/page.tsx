@@ -181,7 +181,7 @@ export default function CommercialQuotePage() {
                 </CardHeader>
                 <CardContent>
                   <Form {...form}>
-                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                   <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6" name="commercial-quote" netlify>
                       <div className="space-y-4">
                         <h3 className="text-lg font-medium text-white">Contact Information</h3>
                         <div className="grid gap-6 sm:grid-cols-2">
@@ -193,7 +193,7 @@ export default function CommercialQuotePage() {
                                 <FormLabel className="text-white">Contact Name</FormLabel>
                                 <FormControl>
                                   <Input
-                                    placeholder="John Doe"
+                                    placeholder="Your Name"
                                     {...field}
                                     className="bg-white/10 text-white border-white/20"
                                   />
@@ -207,10 +207,10 @@ export default function CommercialQuotePage() {
                             name="companyName"
                             render={({ field }) => (
                               <FormItem>
-                                <FormLabel className="text-white">Company Name</FormLabel>
+                                <FormLabel className="text-white">Your Company Name</FormLabel>
                                 <FormControl>
                                   <Input
-                                    placeholder="ABC Company"
+                                    placeholder="Your Company"
                                     {...field}
                                     className="bg-white/10 text-white border-white/20"
                                   />
@@ -229,7 +229,7 @@ export default function CommercialQuotePage() {
                                 <FormLabel className="text-white">Email</FormLabel>
                                 <FormControl>
                                   <Input
-                                    placeholder="john@example.com"
+                                    placeholder="your@email.com"
                                     {...field}
                                     className="bg-white/10 text-white border-white/20"
                                   />
@@ -294,7 +294,7 @@ export default function CommercialQuotePage() {
                                     <SelectItem value="office">Office</SelectItem>
                                     <SelectItem value="retail">Retail</SelectItem>
                                     <SelectItem value="restaurant">Restaurant</SelectItem>
-                                    <SelectItem value="medical">Medical Facility</SelectItem>
+                                    <SelectItem value="medical">Art Studio/Massage Parlor</SelectItem>
                                     <SelectItem value="industrial">Industrial</SelectItem>
                                     <SelectItem value="other">Other</SelectItem>
                                   </SelectContent>
