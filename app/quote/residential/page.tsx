@@ -191,7 +191,7 @@ export default function ResidentialQuotePage() {
 return (
     <div className="flex min-h-screen flex-col">
       {/* Hidden form for Netlify */}
-      <form name="residential-quote" netlify netlify-honeypot="bot-field" hidden>
+      <form name="residential-quote" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
         <input type="text" name="name" />
         <input type="email" name="email" />
         <input type="text" name="phone" />
