@@ -54,6 +54,36 @@ export default function RealtorQuotePage() {
     },
   })
 
+  async function onSubmit(data: z.infer<typeof formSchema>) {
+    try {
+      const quote = calculateQuote(data)
+      setQuoteAmount(quote)
+
+      // Send form data to webhook
+      const response = await fetch('/api/submit-quote', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...data,
+          quoteAmount: quote,
+          formType: 'realtor-quote',
+          date: data.date.toISOString(),
+        }),
+      })
+
+      if (!response.ok) {
+        throw new Error('Failed to submit form')
+      }
+
+      setQuoteGenerated(true)
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      // Handle error appropriately
+    }
+  }
+
   function calculateQuote(data: z.infer<typeof formSchema>) {
     // Base prices for different service types
     const servicePrices = {
@@ -144,14 +174,34 @@ export default function RealtorQuotePage() {
     return Math.round(basePrice / 10) * 10
   }
 
-  function onSubmit(data: z.infer<typeof formSchema>) {
-    // Calculate quote
-    const estimatedQuote = calculateQuote(data)
-    setQuoteAmount(estimatedQuote)
-    setQuoteGenerated(true)
+  async function onSubmit(data: z.infer<typeof formSchema>) {
+    try {
+      const estimatedQuote = calculateQuote(data)
+      setQuoteAmount(estimatedQuote)
 
-    // In a real application, you would also send this data to your backend
-    console.log(data)
+      // Send form data to webhook
+      const response = await fetch('/api/submit-quote', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...data,
+          quoteAmount: estimatedQuote,
+          formType: 'realtor-quote',
+          date: data.date.toISOString(),
+        }),
+      })
+
+      if (!response.ok) {
+        throw new Error('Failed to submit form')
+      }
+
+      setQuoteGenerated(true)
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      // Handle error appropriately - you might want to show an error message to the user
+    }
   }
 
   const specialConditions = [
@@ -192,7 +242,7 @@ export default function RealtorQuotePage() {
                 </CardHeader>
                 <CardContent>
                   <Form {...form}>
-                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6" name="realtor-quote" netlify>
+                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                       <div className="space-y-4">
                         <h3 className="text-lg font-medium text-white">Contact Information</h3>
                         <div className="grid gap-6 sm:grid-cols-2">

@@ -5,22 +5,52 @@
 @layer utilities {
   .glass-effect {
     @apply bg-white/10 backdrop-blur-md border border-white/20 shadow-lg;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   }
   
   .glass-effect-dark {
     @apply bg-black/10 backdrop-blur-md border border-white/10 shadow-lg;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   }
 
   .glass-card {
     @apply glass-effect rounded-xl p-6 hover:bg-white/15 transition-all duration-300;
+    transform: perspective(1000px) rotateX(0deg);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .glass-card:hover {
+    transform: perspective(1000px) rotateX(5deg) translateY(-5px);
   }
 
   .glass-card-dark {
     @apply glass-effect-dark rounded-xl p-6 hover:bg-black/15 transition-all duration-300;
+    transform: perspective(1000px) rotateX(0deg);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .glass-card-dark:hover {
+    transform: perspective(1000px) rotateX(5deg) translateY(-5px);
   }
 
   .glass-nav {
     @apply glass-effect sticky top-0 z-50;
+    animation: navBlur 0.5s ease-in-out;
+  }
+
+  .shadow-glow {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  }
+
+  @keyframes navBlur {
+    from {
+      backdrop-filter: blur(0);
+      background-color: transparent;
+    }
+    to {
+      backdrop-filter: blur(8px);
+      background-color: rgba(255, 255, 255, 0.1);
+    }
   }
 }
 
