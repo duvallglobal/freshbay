@@ -93,16 +93,8 @@ export default function CommercialServicesPage() {
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {/* Office Space */}
             <RevealOnScroll>
-              <Card className="bg-white/5 border-white/10">
-                <CardHeader>
-                  <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
-                    <Image
-                      src="/placeholder.svg?height=600&width=800"
-                      alt="Office Space Cleaning"
-                      fill
-                      className="object-cover transition-transform duration-500 hover:scale-105"
-                    />
-                  </div>
+            <Card className="bg-white/5 border-white/10 rounded-lg flex flex-col h-full">
+                <CardHeader className="pt-6">
                   <CardTitle className="text-secondary mt-4">Office Space</CardTitle>
                   <CardDescription className="text-white/70">Professional workspace cleaning solutions</CardDescription>
                 </CardHeader>
@@ -136,136 +128,112 @@ export default function CommercialServicesPage() {
             </RevealOnScroll>
 
             {/* Art Studios */}
-            <RevealOnScroll delay={100}>
-              <Card className="bg-white/5 border-white/10">
-                <CardHeader>
-                  <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
-                    <Image
-                      src="/placeholder.svg?height=600&width=800"
-                      alt="Art Studio Cleaning"
-                      fill
-                      className="object-cover transition-transform duration-500 hover:scale-105"
-                    />
-                  </div>
-                  <CardTitle className="text-secondary mt-4">Art Studios</CardTitle>
-                  <CardDescription className="text-white/70">Specialized creative space cleaning</CardDescription>
-                </CardHeader>
-                <CardContent className="text-white/90">
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2">
-                      <CheckCircle className="mt-1 h-4 w-4 shrink-0 text-secondary" />
-                      <span>Safe cleaning around artwork and supplies</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle className="mt-1 h-4 w-4 shrink-0 text-secondary" />
-                      <span>Dust and debris removal without disruption</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle className="mt-1 h-4 w-4 shrink-0 text-secondary" />
-                      <span>Flexible scheduling around studio hours</span>
-                    </li>
-                  </ul>
-                </CardContent>
-                <CardFooter>
-                  <Button asChild variant="secondary" className="w-full group">
-                    <Link href="/services/commercial/art-studios">
-                      <span className="flex items-center justify-center gap-2">
-                        Learn More
-                        <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                      </span>
-                    </Link>
-                  </Button>
-                </CardFooter>
-              </Card>
-            </RevealOnScroll>
+<RevealOnScroll delay={100}>
+  <Card className="bg-white/5 border-white/10 rounded-lg flex flex-col h-full">
+    <CardHeader className="pt-6">
+      <CardTitle className="text-secondary mt-4">Art Studios</CardTitle>
+      <CardDescription className="text-white/70">Specialized creative space cleaning</CardDescription>
+    </CardHeader>
+    <CardContent className="text-white/90">
+      <ul className="space-y-2">
+        <li className="flex items-start gap-2">
+          <CheckCircle className="mt-1 h-4 w-4 shrink-0 text-secondary" />
+          <span>Safe cleaning around artwork and supplies</span>
+        </li>
+        <li className="flex items-start gap-2">
+          <CheckCircle className="mt-1 h-4 w-4 shrink-0 text-secondary" />
+          <span>Dust and debris removal without disruption</span>
+        </li>
+        <li className="flex items-start gap-2">
+          <CheckCircle className="mt-1 h-4 w-4 shrink-0 text-secondary" />
+          <span>Flexible scheduling around studio hours</span>
+        </li>
+      </ul>
+    </CardContent>
+    <CardFooter>
+      <Button asChild variant="secondary" className="w-full group">
+        <Link href="/services/commercial/art-studios">
+          <span className="flex items-center justify-center gap-2">
+            Learn More
+            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </span>
+        </Link>
+      </Button>
+    </CardFooter>
+  </Card>
+</RevealOnScroll>
 
-            {/* Massage Parlors */}
-            <RevealOnScroll delay={200}>
-              <Card className="bg-white/5 border-white/10">
-                <CardHeader>
-                  <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
-                    <Image
-                      src="/placeholder.svg?height=600&width=800"
-                      alt="Massage Parlor Cleaning"
-                      fill
-                      className="object-cover transition-transform duration-500 hover:scale-105"
-                    />
-                  </div>
-                  <CardTitle className="text-secondary mt-4">Massage Parlors</CardTitle>
-                  <CardDescription className="text-white/70">Hygienic wellness space maintenance</CardDescription>
-                </CardHeader>
-                <CardContent className="text-white/90">
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2">
-                      <CheckCircle className="mt-1 h-4 w-4 shrink-0 text-secondary" />
-                      <span>Thorough sanitization of treatment rooms</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle className="mt-1 h-4 w-4 shrink-0 text-secondary" />
-                      <span>Special attention to linens and surfaces</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle className="mt-1 h-4 w-4 shrink-0 text-secondary" />
-                      <span>Eco-friendly, hypoallergenic products</span>
-                    </li>
-                  </ul>
-                </CardContent>
-                <CardFooter>
-                  <Button asChild variant="secondary" className="w-full group">
-                    <Link href="/services/commercial/massage-parlors">
-                      <span className="flex items-center justify-center gap-2">
-                        Learn More
-                        <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                      </span>
-                    </Link>
-                  </Button>
-                </CardFooter>
-              </Card>
-            </RevealOnScroll>
+{/* Massage Parlors */}
+<RevealOnScroll delay={200}>
+  <Card className="bg-white/5 border-white/10 rounded-lg flex flex-col h-full">
+    <CardHeader className="pt-6">
+      <CardTitle className="text-secondary mt-4">Massage Parlors</CardTitle>
+      <CardDescription className="text-white/70">Hygienic wellness space maintenance</CardDescription>
+    </CardHeader>
+    <CardContent className="text-white/90">
+      <ul className="space-y-2">
+        <li className="flex items-start gap-2">
+          <CheckCircle className="mt-1 h-4 w-4 shrink-0 text-secondary" />
+          <span>Thorough sanitization of treatment rooms</span>
+        </li>
+        <li className="flex items-start gap-2">
+          <CheckCircle className="mt-1 h-4 w-4 shrink-0 text-secondary" />
+          <span>Special attention to linens and surfaces</span>
+        </li>
+        <li className="flex items-start gap-2">
+          <CheckCircle className="mt-1 h-4 w-4 shrink-0 text-secondary" />
+          <span>Eco-friendly, hypoallergenic products</span>
+        </li>
+      </ul>
+    </CardContent>
+    <CardFooter>
+      <Button asChild variant="secondary" className="w-full group">
+        <Link href="/services/commercial/massage-parlors">
+          <span className="flex items-center justify-center gap-2">
+            Learn More
+            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </span>
+        </Link>
+      </Button>
+    </CardFooter>
+  </Card>
+</RevealOnScroll>
 
-            {/* Janitorial Services */}
-            <RevealOnScroll delay={300}>
-              <Card className="bg-white/5 border-white/10">
-                <CardHeader>
-                  <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
-                    <Image
-                      src="/placeholder.svg?height=600&width=800"
-                      alt="Janitorial Services"
-                      fill
-                      className="object-cover transition-transform duration-500 hover:scale-105"
-                    />
-                  </div>
-                  <CardTitle className="text-secondary mt-4">Janitorial Services</CardTitle>
-                  <CardDescription className="text-white/70">Comprehensive facility maintenance</CardDescription>
-                </CardHeader>
-                <CardContent className="text-white/90">
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2">
-                      <CheckCircle className="mt-1 h-4 w-4 shrink-0 text-secondary" />
-                      <span>Regular facility maintenance</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle className="mt-1 h-4 w-4 shrink-0 text-secondary" />
-                      <span>Floor care and window cleaning</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle className="mt-1 h-4 w-4 shrink-0 text-secondary" />
-                      <span>Waste management and recycling</span>
-                    </li>
-                  </ul>
-                </CardContent>
-                <CardFooter>
-                  <Button asChild variant="secondary" className="w-full group">
-                    <Link href="/services/commercial/janitorial-services">
-                      <span className="flex items-center justify-center gap-2">
-                        Learn More
-                        <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                      </span>
-                    </Link>
-                  </Button>
-                </CardFooter>
-              </Card>
-            </RevealOnScroll>
+{/* Janitorial Services */}
+<RevealOnScroll delay={300}>
+  <Card className="bg-white/5 border-white/10 rounded-lg flex flex-col h-full">
+    <CardHeader className="pt-6">
+      <CardTitle className="text-secondary mt-4">Janitorial Services</CardTitle>
+      <CardDescription className="text-white/70">Comprehensive facility maintenance</CardDescription>
+    </CardHeader>
+    <CardContent className="text-white/90">
+      <ul className="space-y-2">
+        <li className="flex items-start gap-2">
+          <CheckCircle className="mt-1 h-4 w-4 shrink-0 text-secondary" />
+          <span>Regular facility maintenance</span>
+        </li>
+        <li className="flex items-start gap-2">
+          <CheckCircle className="mt-1 h-4 w-4 shrink-0 text-secondary" />
+          <span>Floor care and window cleaning</span>
+        </li>
+        <li className="flex items-start gap-2">
+          <CheckCircle className="mt-1 h-4 w-4 shrink-0 text-secondary" />
+          <span>Waste management and recycling</span>
+        </li>
+      </ul>
+    </CardContent>
+    <CardFooter>
+      <Button asChild variant="secondary" className="w-full group">
+        <Link href="/services/commercial/janitorial-services">
+          <span className="flex items-center justify-center gap-2">
+            Learn More
+            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </span>
+        </Link>
+      </Button>
+    </CardFooter>
+  </Card>
+</RevealOnScroll>
           </div>
         </div>
       </section>

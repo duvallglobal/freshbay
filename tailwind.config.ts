@@ -88,6 +88,7 @@ const config = {
       },
       boxShadow: {
         glow: "0 0 20px rgba(119, 181, 254, 0.3)",
+        "glow-strong": "0 0 30px rgba(119, 181, 254, 0.5)",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -133,4 +134,3 @@ const config = {
 } satisfies Config
 
 export default config
-

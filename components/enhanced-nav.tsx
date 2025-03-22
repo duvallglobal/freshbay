@@ -75,16 +75,16 @@ export function EnhancedNav() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <div className="relative h-10 w-10 mr-3">
+            <div className="relative h-16 w-16 mr-3">
               <Image
-                src="/placeholder.svg?height=40&width=40"
+                src="/placeholder.svg?height=64&width=64"
                 alt="FreshBay Logo"
-                width={40}
-                height={40}
+                width={64}
+                height={64}
                 className="object-contain"
               />
             </div>
-            <motion.span variants={itemVariants} className="text-xl font-bold text-white">
+            <motion.span variants={itemVariants} className="text-2xl font-bold text-white">
               FreshBay <span className="text-secondary">Cleaning Co.</span>
             </motion.span>
           </Link>

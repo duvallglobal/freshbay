@@ -15,6 +15,17 @@ function Calendar({
   showOutsideDays = true,
   ...props
 }: CalendarProps) {
+  const [isVisible, setIsVisible] = React.useState(true)
+
+  const handleSelect = (date: Date | undefined) => {
+    if (date) {
+      setIsVisible(false)
+      // You can add any additional logic here, like updating a parent component's state
+    }
+  }
+
+  if (!isVisible) return null
+
   return (
     <DayPicker
       showOutsideDays={showOutsideDays}
@@ -57,6 +68,7 @@ function Calendar({
         IconLeft: ({ ...props }) => <ChevronLeft className="h-4 w-4" />,
         IconRight: ({ ...props }) => <ChevronRight className="h-4 w-4" />,
       }}
+      onSelect={handleSelect}
       {...props}
     />
   )
