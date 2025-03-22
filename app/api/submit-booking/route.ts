@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 
-const MAKE_WEBHOOK_URL = 'https://hook.us2.make.com/gs5om7dt7o2kg61ldzn0a54da4vqk452'
+const BOOKING_WEBHOOK_URL = 'https://hook.us2.make.com/gs5om7dt7o2kg61ldzn0a54da4vqk452'
+const QUOTE_BOOKING_WEBHOOK_URL = 'https://hook.us2.make.com/ecjag2rwujqmifi7qpl6bfsq3lfm81tx'
 
 export async function POST(request: Request) {
   try {
@@ -9,8 +10,11 @@ export async function POST(request: Request) {
     // Log the submission for debugging
     console.log('Booking submission received:', data)
 
+    // Determine which webhook URL to use based on whether this is a quote-initiated booking
+    const webhookUrl = data.fromQuote ? QUOTE_BOOKING_WEBHOOK_URL : BOOKING_WEBHOOK_URL
+
     // Send to Make.com webhook
-    const webhookResponse = await fetch(MAKE_WEBHOOK_URL, {
+    const webhookResponse = await fetch(webhookUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -20,7 +24,7 @@ export async function POST(request: Request) {
         ...data,
         timestamp: new Date().toISOString(),
         source: 'freshbay-website',
-        formType: 'booking'
+        formType: data.fromQuote ? 'quote-booking' : 'direct-booking'
       }),
     })
 

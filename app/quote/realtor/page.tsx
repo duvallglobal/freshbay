@@ -197,6 +197,14 @@ export default function RealtorQuotePage() {
         throw new Error('Failed to submit form')
       }
 
+      // Store quote data in localStorage for the booking form
+      localStorage.setItem('quoteData', JSON.stringify({
+        ...data,
+        quoteAmount: estimatedQuote,
+        quoteId: Date.now().toString(),
+        quoteDate: new Date().toISOString()
+      }))
+
       setQuoteGenerated(true)
     } catch (error) {
       console.error('Error submitting form:', error)
@@ -655,7 +663,13 @@ export default function RealtorQuotePage() {
                   </div>
                 </CardContent>
                 <CardFooter className="flex flex-col gap-4">
-                  <Button className="w-full bg-secondary text-primary hover:bg-secondary/90" size="lg">
+                  <Button 
+                    onClick={() => {
+                      window.location.href = '/book?fromQuote=true'
+                    }}
+                    className="w-full bg-secondary text-primary hover:bg-secondary/90" 
+                    size="lg"
+                  >
                     Book This Service
                   </Button>
                   <Button

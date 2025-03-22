@@ -1,6 +1,7 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import type { JSX } from "react"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
@@ -27,8 +28,21 @@ const formSchema = z.object({
   specialInstructions: z.string().optional(),
 })
 
-export default function BookPage() {
+export default function BookPage(): JSX.Element {
   const [submitted, setSubmitted] = useState(false)
+
+  const [quoteData, setQuoteData] = useState<any>(null)
+
+  // Load quote data from localStorage if coming from quote page
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    if (params.get('fromQuote')) {
+      const storedQuoteData = localStorage.getItem('quoteData')
+      if (storedQuoteData) {
+        setQuoteData(JSON.parse(storedQuoteData))
+      }
+    }
+  }, [])
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -42,6 +56,15 @@ export default function BookPage() {
   })
 
   async function onSubmit(data: z.infer<typeof formSchema>) {
+    // Include quote data if it exists
+    const bookingData = quoteData ? {
+      ...data,
+      fromQuote: true,
+      quoteId: quoteData.quoteId,
+      quoteAmount: quoteData.quoteAmount,
+      quoteDate: quoteData.quoteDate
+    } : data
+
     try {
       const response = await fetch('/api/submit-booking', {
         method: 'POST',
@@ -49,8 +72,8 @@ export default function BookPage() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          ...data,
-          formType: 'booking',
+          ...bookingData,
+          formType: quoteData ? 'quote-booking' : 'direct-booking',
           date: data.date.toISOString(),
         }),
       })
