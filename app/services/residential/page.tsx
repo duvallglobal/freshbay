@@ -1,5 +1,4 @@
 import Link from "next/link"
-import Image from "next/image"
 import { ArrowRight, CheckCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { RevealOnScroll } from "@/components/ui/reveal-on-scroll"
@@ -91,16 +90,9 @@ export default function ResidentialPage() {
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {/* Standard Cleaning */}
             <RevealOnScroll>
-              <Card className="bg-white/5 border-white/10">
+              <Card className="bg-white/5 border-white/10 rounded-lg p-4">
                 <CardHeader>
-                  <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
-                    <Image
-                      src="/placeholder.svg?height=600&width=800"
-                      alt="Standard Cleaning"
-                      fill
-                      className="object-cover transition-transform duration-500 hover:scale-105"
-                    />
-                  </div>
+                  {/* Removed Image */}
                   <CardTitle className="text-secondary mt-4">Standard Cleaning</CardTitle>
                   <CardDescription className="text-white/70">Regular maintenance for a consistently clean home</CardDescription>
                 </CardHeader>
@@ -135,16 +127,9 @@ export default function ResidentialPage() {
 
             {/* Deep Cleaning */}
             <RevealOnScroll delay={100}>
-              <Card className="bg-white/5 border-white/10">
+              <Card className="bg-white/5 border-white/10 rounded-lg p-4">
                 <CardHeader>
-                  <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
-                    <Image
-                      src="/placeholder.svg?height=600&width=800"
-                      alt="Deep Cleaning"
-                      fill
-                      className="object-cover transition-transform duration-500 hover:scale-105"
-                    />
-                  </div>
+                  {/* Removed Image */}
                   <CardTitle className="text-secondary mt-4">Deep Cleaning</CardTitle>
                   <CardDescription className="text-white/70">Thorough cleaning for a fresh start</CardDescription>
                 </CardHeader>
@@ -179,16 +164,9 @@ export default function ResidentialPage() {
 
             {/* Recurring Cleaning */}
             <RevealOnScroll delay={200}>
-              <Card className="bg-white/5 border-white/10">
+              <Card className="bg-white/5 border-white/10 rounded-lg p-4">
                 <CardHeader>
-                  <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
-                    <Image
-                      src="/placeholder.svg?height=600&width=800"
-                      alt="Recurring Cleaning"
-                      fill
-                      className="object-cover transition-transform duration-500 hover:scale-105"
-                    />
-                  </div>
+                  {/* Removed Image */}
                   <CardTitle className="text-secondary mt-4">Recurring Cleaning</CardTitle>
                   <CardDescription className="text-white/70">Scheduled cleaning for ongoing maintenance</CardDescription>
                 </CardHeader>
@@ -223,16 +201,9 @@ export default function ResidentialPage() {
 
             {/* Move-in/Move-out Cleaning */}
             <RevealOnScroll delay={300}>
-              <Card className="bg-white/5 border-white/10">
+              <Card className="bg-white/5 border-white/10 rounded-lg p-4">
                 <CardHeader>
-                  <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
-                    <Image
-                      src="/placeholder.svg?height=600&width=800"
-                      alt="Move-in/Move-out Cleaning"
-                      fill
-                      className="object-cover transition-transform duration-500 hover:scale-105"
-                    />
-                  </div>
+                  {/* Removed Image */}
                   <CardTitle className="text-secondary mt-4">Move-in/Move-out Cleaning</CardTitle>
                   <CardDescription className="text-white/70">Fresh start for your new space</CardDescription>
                 </CardHeader>
@@ -267,16 +238,9 @@ export default function ResidentialPage() {
 
             {/* Special Event Cleaning */}
             <RevealOnScroll delay={400}>
-              <Card className="bg-white/5 border-white/10">
+              <Card className="bg-white/5 border-white/10 rounded-lg p-4">
                 <CardHeader>
-                  <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
-                    <Image
-                      src="/placeholder.svg?height=600&width=800"
-                      alt="Special Event Cleaning"
-                      fill
-                      className="object-cover transition-transform duration-500 hover:scale-105"
-                    />
-                  </div>
+                  {/* Removed Image */}
                   <CardTitle className="text-secondary mt-4">Special Event Cleaning</CardTitle>
                   <CardDescription className="text-white/70">Complete event cleaning solutions</CardDescription>
                 </CardHeader>
