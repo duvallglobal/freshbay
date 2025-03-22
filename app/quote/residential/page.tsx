@@ -148,8 +148,37 @@ export default function ResidentialQuotePage() {
     const estimatedQuote = calculateQuote(data)
     setQuoteAmount(estimatedQuote)
     setQuoteGenerated(true)
+  // Format date for Netlify form
+  const formattedDate = data.date ? format(data.date, "yyyy-MM-dd") : "";
+  
+  // Format specialAreas array as a string for Netlify
+  const formattedSpecialAreas = data.specialAreas ? data.specialAreas.join(", ") : "";
 
-    // In a real application, you would also send this data to your backend
+  // Create FormData object for Netlify submission
+  const formData = new FormData();
+  formData.append("form-name", "residential-quote");
+  formData.append("name", data.name);
+  formData.append("email", data.email);
+  formData.append("phone", data.phone);
+  formData.append("address", data.address);
+  formData.append("propertyType", data.propertyType);
+  formData.append("propertySize", data.propertySize);
+  formData.append("bedrooms", data.bedrooms);
+  formData.append("bathrooms", data.bathrooms);
+  formData.append("serviceType", data.serviceType);
+  if (data.frequency) formData.append("frequency", data.frequency);
+  formData.append("date", formattedDate);
+  formData.append("pets", data.pets ? "yes" : "no");
+  formData.append("specialAreas", formattedSpecialAreas);
+  if (data.specialRequests) formData.append("specialRequests", data.specialRequests);
+  
+  // Submit to Netlify
+  fetch("/", {
+    method: "POST",
+    body: formData
+  })
+    .then(() => console.log("Form successfully submitted to Netlify"))
+    .catch(error => console.error("Netlify form submission error:", error));    // In a real application, you would also send this data to your backend
     console.log(data)
   }
 
@@ -159,9 +188,26 @@ export default function ResidentialQuotePage() {
     { id: "patio", label: "Patio/Deck" },
     { id: "windows", label: "Interior Windows/Window Seals" },
   ]
-
-  return (
+return (
     <div className="flex min-h-screen flex-col">
+      {/* Hidden form for Netlify */}
+      <form name="residential-quote" netlify netlify-honeypot="bot-field" hidden>
+        <input type="text" name="name" />
+        <input type="email" name="email" />
+        <input type="text" name="phone" />
+        <input type="text" name="address" />
+        <input type="text" name="propertyType" />
+        <input type="text" name="propertySize" />
+        <input type="text" name="bedrooms" />
+        <input type="text" name="bathrooms" />
+        <input type="text" name="serviceType" />
+        <input type="text" name="frequency" />
+        <input type="date" name="date" />
+        <input type="checkbox" name="pets" />
+        <input type="text" name="specialAreas" />
+        <textarea name="specialRequests"></textarea>
+      </form>
+      
       {/* Hero Section */}
       <section className="bg-primary py-16 mt-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -191,7 +237,18 @@ export default function ResidentialQuotePage() {
                 </CardHeader>
                 <CardContent>
                   <Form {...form}>
-                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                    <form 
+      onSubmit={form.handleSubmit(onSubmit)} 
+      className="space-y-6"
+      name="residential-quote"
+      method="POST"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+                        action="/thank-you"
+
+    >
+      <input type="hidden" name="form-name" value="residential-quote" />
+      <input type="hidden" name="bot-field" />
                       <div className="space-y-4">
                         <h3 className="text-lg font-medium text-white">Contact Information</h3>
                         <div className="grid gap-6 sm:grid-cols-2">
@@ -589,40 +646,80 @@ export default function ResidentialQuotePage() {
                     This is an estimate based on the information provided. The final price may vary based on the actual
                     condition and specific requirements of your home.
                   </p>
-                  <div className="mt-6 rounded-lg bg-white/10 p-4">
-                    <h3 className="mb-2 font-semibold text-white">What's included in your cleaning:</h3>
-                    <ul className="space-y-2 text-left">
-                      <li className="flex items-start gap-2">
-                        <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-secondary" />
-                        <span className="text-white">Professional Cleaning by Our Trained Staff</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-secondary" />
-                        <span className="text-white">All Cleaning Supplies and Equipment</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-secondary" />
-                        <span className="text-white">Thurough Cleaning Service Every Time</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-secondary" />
-                        <span className="text-white">100% Satisfaction Guarantee!</span>
-                      </li>
-                    </ul>
-                  </div>
-                </CardContent>
-                <CardFooter className="flex flex-col gap-4">
-                  <Button className="w-full bg-secondary text-primary hover:bg-secondary/90" size="lg">
-                    Book This Service
-                  </Button>
-                  <Button
-                    variant="outline"
-                    onClick={() => setQuoteGenerated(false)}
-                    className="bg-white/10 text-white border-white/20 hover:bg-white/20"
-                  >
-                    Modify Quote
-                  </Button>
-                </CardFooter>
+                 <div className="mt-6 rounded-lg bg-white/10 p-4">
+    <h3 className="mb-2 font-semibold text-white">What's included in your cleaning:</h3>
+    <ul className="space-y-2 text-left">
+      <li className="flex items-start gap-2">
+        <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-secondary" />
+        <span className="text-white">Professional Cleaning by Our Trained Staff</span>
+      </li>
+      <li className="flex items-start gap-2">
+        <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-secondary" />
+        <span className="text-white">All Cleaning Supplies and Equipment</span>
+      </li>
+      <li className="flex items-start gap-2">
+        <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-secondary" />
+        <span className="text-white">Thurough Cleaning Service Every Time</span>
+      </li>
+      <li className="flex items-start gap-2">
+        <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-secondary" />
+        <span className="text-white">100% Satisfaction Guarantee!</span>
+      </li>
+    </ul>
+  </div>
+</CardContent>
+<CardFooter className="flex flex-col gap-4">
+  <Button 
+    className="w-full bg-secondary text-primary hover:bg-secondary/90" 
+    size="lg"
+    onClick={() => {
+      // Create FormData with the current form values
+      const data = form.getValues();
+      
+      // Format date for Netlify form
+      const formattedDate = data.date ? format(data.date, "yyyy-MM-dd") : "";
+      
+      // Format specialAreas array as a string for Netlify
+      const formattedSpecialAreas = data.specialAreas ? data.specialAreas.join(", ") : "";
+
+      // Create FormData object for Netlify submission
+      const formData = new FormData();
+      formData.append("form-name", "residential-quote");
+      formData.append("name", data.name);
+      formData.append("email", data.email);
+      formData.append("phone", data.phone);
+      formData.append("address", data.address);
+      formData.append("propertyType", data.propertyType);
+      formData.append("propertySize", data.propertySize);
+      formData.append("bedrooms", data.bedrooms);
+      formData.append("bathrooms", data.bathrooms);
+      formData.append("serviceType", data.serviceType);
+      if (data.frequency) formData.append("frequency", data.frequency);
+      formData.append("date", formattedDate);
+      formData.append("pets", data.pets ? "yes" : "no");
+      formData.append("specialAreas", formattedSpecialAreas);
+      if (data.specialRequests) formData.append("specialRequests", data.specialRequests);
+      formData.append("quoteAmount", quoteAmount.toString());
+      
+      // Submit to Netlify
+      fetch("/", {
+        method: "POST",
+        body: formData
+      })
+        .then(() => alert("Your booking request has been submitted! We'll contact you shortly."))
+        .catch(error => alert("There was an error submitting your booking. Please try again."));
+    }}
+  >
+    Book This Service
+  </Button>
+  <Button
+    variant="outline"
+    onClick={() => setQuoteGenerated(false)}
+    className="bg-white/10 text-white border-white/20 hover:bg-white/20"
+  >
+    Modify Quote
+  </Button>
+</CardFooter>
               </Card>
             )}
           </div>

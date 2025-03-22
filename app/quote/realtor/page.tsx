@@ -192,7 +192,7 @@ export default function RealtorQuotePage() {
                 </CardHeader>
                 <CardContent>
                   <Form {...form}>
-                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6" name="realtor-quote" netlify>
                       <div className="space-y-4">
                         <h3 className="text-lg font-medium text-white">Contact Information</h3>
                         <div className="grid gap-6 sm:grid-cols-2">
