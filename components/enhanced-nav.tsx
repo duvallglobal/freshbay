@@ -388,16 +388,6 @@ export function EnhancedNav() {
               </div>
 
               <div className="px-3 py-2">
-                <Button
-                  asChild
-                  className="quote-button w-full justify-center"
-                  onClick={() => setIsOpen(false)}
-                >
-                  <Link href="/quote">GET A QUOTE</Link>
-                </Button>
-              </div>
-
-              <div className="px-3 py-2">
                 <Link
                   href="/contact"
                   className="block px-3 py-2 text-white hover:text-secondary transition-colors duration-200 rounded-lg hover:bg-white/5"
@@ -407,10 +397,20 @@ export function EnhancedNav() {
                 </Link>
               </div>
 
-              <div className="px-3 py-2">
+              <div className="mt-4 px-3 py-2">
                 <Button
                   asChild
-                  className="w-full mt-4 cta-button shine border-2 border-secondary hover:shadow-glow-secondary"
+                  className="quote-button w-full justify-center"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <Link href="/quote">GET A QUOTE</Link>
+                </Button>
+              </div>
+
+              <div className="px-3 py-2 mt-2">
+                <Button
+                  asChild
+                  className="w-full cta-button shine border-2 border-secondary hover:shadow-glow-secondary"
                   onClick={() => setIsOpen(false)}
                 >
                   <Link href="/book">BOOK NOW</Link>
