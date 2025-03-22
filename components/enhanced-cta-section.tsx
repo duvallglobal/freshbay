@@ -87,10 +87,10 @@ export function EnhancedCTASection({
                 asChild
                 size="lg"
                 variant="secondary"
-                className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 rounded-full shadow-glow-strong shine w-full sm:w-auto"
+                className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 rounded-full shadow-glow-strong shine w-full sm:w-auto font-medium"
               >
                 <Link href={primaryButtonLink}>
-                  <span className="flex items-center gap-2">
+                  <span className="flex items-center gap-2 group">
                     {primaryButtonText}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -124,7 +124,7 @@ export function EnhancedCTASection({
                 asChild
                 size="lg"
                 variant="outline"
-                className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 rounded-full bg-transparent text-white border-white hover:bg-white/10 transition-colors duration-300 w-full sm:w-auto"
+                className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 rounded-full bg-transparent text-white border-white hover:bg-white/10 hover:text-secondary transition-colors duration-300 w-full sm:w-auto font-medium"
               >
                 <Link href={secondaryButtonLink}>{secondaryButtonText}</Link>
               </Button>

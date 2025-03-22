@@ -139,11 +139,42 @@
 
 @layer components {
   .nav-link {
-    @apply text-white hover:text-secondary transition-colors duration-200 text-sm md:text-base font-sans font-sans;
+    @apply text-white hover:text-secondary transition-colors duration-200 text-sm md:text-base font-sans;
   }
 
   .cta-button {
-    @apply bg-secondary text-primary hover:bg-secondary/90 transition-all duration-300;
+    @apply bg-secondary text-primary hover:bg-secondary transition-all duration-300 font-medium;
+  }
+
+  /* Ensure text remains visible on hover by using white text color */
+  .cta-button:hover {
+    color: white;
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+  }
+
+  .quote-button {
+    @apply bg-transparent text-white border-2 border-white/30 hover:border-secondary hover:text-secondary transition-all duration-300 font-medium;
+  }
+
+  /* Fix for outline buttons to ensure text visibility on hover */
+  button[variant="outline"]:hover,
+  .btn-outline:hover,
+  a[variant="outline"]:hover {
+    color: hsl(var(--secondary)) !important;
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
+  }
+
+  /* Fix for buttons with light backgrounds to ensure text visibility on hover */
+  .bg-secondary:hover,
+  .hover\:bg-secondary:hover,
+  .hover\:bg-secondary\/90:hover,
+  [class*="bg-secondary"]:hover,
+  button[variant="secondary"]:hover,
+  a[variant="secondary"]:hover,
+  .btn-secondary:hover {
+    color: rgba(0, 0, 0, 0.9) !important;
+    font-weight: 600;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
   }
 
   .shine {
@@ -153,6 +184,11 @@
   .shine::after {
     @apply content-[''] absolute top-0 left-[-100%] w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent transform;
     animation: shine 2s infinite;
+  }
+
+  .hover\:shadow-glow-secondary:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 25px rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
   }
 
   .glass-effect {

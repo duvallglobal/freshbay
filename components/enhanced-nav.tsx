@@ -25,6 +25,29 @@ export function EnhancedNav() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  // Handle mouse leave for dropdown
+  useEffect(() => {
+    const handleMouseLeave = (e: MouseEvent) => {
+      const servicesDropdown = document.querySelector('.group')
+      const dropdown = document.querySelector('.group .absolute')
+
+      if (servicesDropdown && dropdown) {
+        const isInDropdown = servicesDropdown.contains(e.target as Node) ||
+                            (dropdown && dropdown.contains(e.target as Node))
+        if (!isInDropdown && activeDropdown === "services") {
+          setActiveDropdown(null)
+        }
+      }
+    }
+
+    if (typeof window !== 'undefined') {
+      document.addEventListener('mousemove', handleMouseLeave)
+      return () => document.removeEventListener('mousemove', handleMouseLeave)
+    }
+
+    return undefined;
+  }, [activeDropdown])
+
   const toggleDropdown = (dropdown: string) => {
     if (activeDropdown === dropdown) {
       setActiveDropdown(null)
@@ -69,18 +92,18 @@ export function EnhancedNav() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled ? "glass-nav" : "bg-primary/80 backdrop-blur-sm"
       }`}
-      style={{ minHeight: '5rem' }}
+      style={{ minHeight: '6rem' }}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-24">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <div className="relative h-20 w-20 mr-4">
+          <Link href="/" className="flex items-center py-3">
+            <div className="relative h-24 w-24 mr-6">
               <Image
-                src="/placeholder.svg?height=80&width=80"
+                src="/placeholder.svg?height=96&width=96"
                 alt="FreshBay Logo"
-                width={80}
-                height={80}
+                width={96}
+                height={96}
                 className="object-contain"
               />
             </div>
@@ -102,13 +125,11 @@ export function EnhancedNav() {
                 className="nav-link flex items-center gap-1"
                 onClick={() => toggleDropdown("services")}
                 onMouseEnter={() => setActiveDropdown("services")}
-                onMouseLeave={() => setActiveDropdown(null)}
               >
                 SERVICES <ChevronDown className="h-4 w-4 transition-transform duration-300 group-hover:rotate-180" />
               </button>
               <AnimatePresence>
-                {(activeDropdown === "services" ||
-                  (typeof window !== "undefined" && document.querySelector(".group:hover"))) && (
+                {activeDropdown === "services" && (
                   <motion.div
                     initial="hidden"
                     animate="visible"
@@ -116,7 +137,6 @@ export function EnhancedNav() {
                     variants={dropdownVariants}
                     className="absolute left-0 mt-2 w-64 rounded-xl shadow-lg bg-card/95 backdrop-blur-md border border-white/10 overflow-hidden z-50"
                     onMouseEnter={() => setActiveDropdown("services")}
-                    onMouseLeave={() => setActiveDropdown(null)}
                   >
                     <div className="py-2 px-1">
                       <Link
@@ -210,9 +230,9 @@ export function EnhancedNav() {
             </motion.div>
 
             <motion.div variants={itemVariants}>
-              <Link href="/quote" className="nav-link">
-                GET A QUOTE
-              </Link>
+              <Button asChild className="quote-button">
+                <Link href="/quote">GET A QUOTE</Link>
+              </Button>
             </motion.div>
 
             <motion.div variants={itemVariants}>
@@ -222,7 +242,7 @@ export function EnhancedNav() {
             </motion.div>
 
             <motion.div variants={itemVariants}>
-              <Button asChild className="cta-button shine">
+              <Button asChild className="cta-button shine border-2 border-secondary hover:shadow-glow-secondary">
                 <Link href="/book">BOOK NOW</Link>
               </Button>
             </motion.div>
@@ -367,25 +387,35 @@ export function EnhancedNav() {
                 </AnimatePresence>
               </div>
 
-              <Link
-                href="/quote"
-                className="block px-3 py-2 text-white hover:text-secondary transition-colors duration-200 rounded-lg hover:bg-white/5"
-                onClick={() => setIsOpen(false)}
-              >
-                GET A QUOTE
-              </Link>
+              <div className="px-3 py-2">
+                <Button
+                  asChild
+                  className="quote-button w-full justify-center"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <Link href="/quote">GET A QUOTE</Link>
+                </Button>
+              </div>
 
-              <Link
-                href="/contact"
-                className="block px-3 py-2 text-white hover:text-secondary transition-colors duration-200 rounded-lg hover:bg-white/5"
-                onClick={() => setIsOpen(false)}
-              >
-                CONTACT
-              </Link>
+              <div className="px-3 py-2">
+                <Link
+                  href="/contact"
+                  className="block px-3 py-2 text-white hover:text-secondary transition-colors duration-200 rounded-lg hover:bg-white/5"
+                  onClick={() => setIsOpen(false)}
+                >
+                  CONTACT
+                </Link>
+              </div>
 
-              <Button asChild className="w-full mt-4 cta-button shine" onClick={() => setIsOpen(false)}>
-                <Link href="/book">BOOK NOW</Link>
-              </Button>
+              <div className="px-3 py-2">
+                <Button
+                  asChild
+                  className="w-full mt-4 cta-button shine border-2 border-secondary hover:shadow-glow-secondary"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <Link href="/book">BOOK NOW</Link>
+                </Button>
+              </div>
             </div>
           </motion.div>
         )}

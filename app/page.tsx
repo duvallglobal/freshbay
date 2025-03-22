@@ -112,7 +112,7 @@ export default function Home() {
                   asChild
                   size="lg"
                   variant="outline"
-                  className="text-lg bg-white/10 text-white border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105 rounded-full px-8 py-6"
+                  className="text-lg bg-white/10 text-white border-white/20 hover:bg-white/20 hover:text-secondary transition-all duration-300 hover:scale-105 rounded-full px-8 py-6 font-medium"
                 >
                   <Link href="/book">SCHEDULE SERVICE NOW!</Link>
                 </Button>
