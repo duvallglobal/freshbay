@@ -66,7 +66,10 @@ export default function ContactPage() {
             <h2 className="text-3xl font-bold text-secondary mb-6">Send Us a Message</h2>
             <p className="text-white/90 mb-8">Fill out the form below and we'll get back to you as soon as possible.</p>
             <div className="service-card">
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={(e) => {
+                e.preventDefault();
+                alert("Message sent! We'll get back to you soon.");
+              }}>
                 <div className="grid gap-6 sm:grid-cols-2">
                   <div>
                     <label htmlFor="name" className="block text-white mb-2">

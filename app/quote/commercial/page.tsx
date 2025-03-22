@@ -181,17 +181,10 @@ export default function CommercialQuotePage() {
                 </CardHeader>
                 <CardContent>
                   <Form {...form}>
-                    <form 
-                      onSubmit={form.handleSubmit(onSubmit)} 
-                      className="space-y-6" 
-                      name="commercial-quote" 
-                      method="POST" 
-                      data-netlify="true" 
-                      data-netlify-honeypot="bot-field" 
-                      action="/thank-you"
+                    <form
+                      onSubmit={form.handleSubmit(onSubmit)}
+                      className="space-y-6"
                     >
-                      <input type="hidden" name="form-name" value="commercial-quote" />
-                      <input type="hidden" name="bot-field" />
                       <div className="space-y-4">
                         <h3 className="text-lg font-medium text-white">Contact Information</h3>
                         <div className="grid gap-6 sm:grid-cols-2">
@@ -584,7 +577,23 @@ export default function CommercialQuotePage() {
                   </div>
                 </CardContent>
                 <CardFooter className="flex flex-col gap-4">
-                  <Button className="w-full bg-secondary text-primary hover:bg-secondary/90" size="lg">
+                  <Button
+                    className="w-full bg-secondary text-primary hover:bg-secondary/90"
+                    size="lg"
+                    onClick={() => {
+                      // Store quote data in localStorage for the booking form
+                      const data = form.getValues();
+                      localStorage.setItem('quoteData', JSON.stringify({
+                        ...data,
+                        quoteAmount: quoteAmount,
+                        quoteId: Date.now().toString(),
+                        quoteDate: new Date().toISOString()
+                      }));
+
+                      // Redirect to booking page
+                      window.location.href = '/book?fromQuote=true';
+                    }}
+                  >
                     Book This Service
                   </Button>
                   <Button

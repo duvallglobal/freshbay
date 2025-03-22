@@ -148,37 +148,8 @@ export default function ResidentialQuotePage() {
     const estimatedQuote = calculateQuote(data)
     setQuoteAmount(estimatedQuote)
     setQuoteGenerated(true)
-  // Format date for Netlify form
-  const formattedDate = data.date ? format(data.date, "yyyy-MM-dd") : "";
-  
-  // Format specialAreas array as a string for Netlify
-  const formattedSpecialAreas = data.specialAreas ? data.specialAreas.join(", ") : "";
 
-  // Create FormData object for Netlify submission
-  const formData = new FormData();
-  formData.append("form-name", "residential-quote");
-  formData.append("name", data.name);
-  formData.append("email", data.email);
-  formData.append("phone", data.phone);
-  formData.append("address", data.address);
-  formData.append("propertyType", data.propertyType);
-  formData.append("propertySize", data.propertySize);
-  formData.append("bedrooms", data.bedrooms);
-  formData.append("bathrooms", data.bathrooms);
-  formData.append("serviceType", data.serviceType);
-  if (data.frequency) formData.append("frequency", data.frequency);
-  formData.append("date", formattedDate);
-  formData.append("pets", data.pets ? "yes" : "no");
-  formData.append("specialAreas", formattedSpecialAreas);
-  if (data.specialRequests) formData.append("specialRequests", data.specialRequests);
-  
-  // Submit to Netlify
-  fetch("/", {
-    method: "POST",
-    body: formData
-  })
-    .then(() => console.log("Form successfully submitted to Netlify"))
-    .catch(error => console.error("Netlify form submission error:", error));    // In a real application, you would also send this data to your backend
+    // In a real application, you would also send this data to your backend
     console.log(data)
   }
 
@@ -238,16 +209,10 @@ return (
                 </CardHeader>
                 <CardContent>
                   <Form {...form}>
-                    <form 
-      onSubmit={form.handleSubmit(onSubmit)} 
+                    <form
+      onSubmit={form.handleSubmit(onSubmit)}
       className="space-y-6"
-      name="residential-quote"
-      method="POST"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
     >
-      <input type="hidden" name="form-name" value="residential-quote" />
-      <input type="hidden" name="bot-field" />
                       <div className="space-y-4">
                         <h3 className="text-lg font-medium text-white">Contact Information</h3>
                         <div className="grid gap-6 sm:grid-cols-2">
@@ -667,45 +632,21 @@ return (
   </div>
 </CardContent>
 <CardFooter className="flex flex-col gap-4">
-  <Button 
-    className="w-full bg-secondary text-primary hover:bg-secondary/90" 
+  <Button
+    className="w-full bg-secondary text-primary hover:bg-secondary/90"
     size="lg"
     onClick={() => {
-      // Create FormData with the current form values
+      // Store quote data in localStorage for the booking form
       const data = form.getValues();
-      
-      // Format date for Netlify form
-      const formattedDate = data.date ? format(data.date, "yyyy-MM-dd") : "";
-      
-      // Format specialAreas array as a string for Netlify
-      const formattedSpecialAreas = data.specialAreas ? data.specialAreas.join(", ") : "";
+      localStorage.setItem('quoteData', JSON.stringify({
+        ...data,
+        quoteAmount: quoteAmount,
+        quoteId: Date.now().toString(),
+        quoteDate: new Date().toISOString()
+      }));
 
-      // Create FormData object for Netlify submission
-      const formData = new FormData();
-      formData.append("form-name", "residential-quote");
-      formData.append("name", data.name);
-      formData.append("email", data.email);
-      formData.append("phone", data.phone);
-      formData.append("address", data.address);
-      formData.append("propertyType", data.propertyType);
-      formData.append("propertySize", data.propertySize);
-      formData.append("bedrooms", data.bedrooms);
-      formData.append("bathrooms", data.bathrooms);
-      formData.append("serviceType", data.serviceType);
-      if (data.frequency) formData.append("frequency", data.frequency);
-      formData.append("date", formattedDate);
-      formData.append("pets", data.pets ? "yes" : "no");
-      formData.append("specialAreas", formattedSpecialAreas);
-      if (data.specialRequests) formData.append("specialRequests", data.specialRequests);
-      formData.append("quoteAmount", quoteAmount.toString());
-      
-      // Submit to Netlify
-      fetch("/", {
-        method: "POST",
-        body: formData
-      })
-        .then(() => alert("Your booking request has been submitted! We'll contact you shortly."))
-        .catch(error => alert("There was an error submitting your booking. Please try again."));
+      // Redirect to booking page
+      window.location.href = '/book?fromQuote=true';
     }}
   >
     Book This Service
