@@ -1,3 +1,8 @@
 {
-    "zencoder.enableRepoIndexing": true
+    "css.validate": false,
+    "less.validate": false,
+    "scss.validate": false,
+    "postcss.validate": false,
+    "zencoder.enableRepoIndexing": true,
+    "npm.packageManager": "npm"
 }

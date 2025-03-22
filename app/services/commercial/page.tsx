@@ -17,7 +17,8 @@ export default function CommercialServicesPage() {
         "Deep cleaning of workstations and common areas",
         "Kitchen and break room sanitization",
         "Window cleaning and floor maintenance"
-      ]
+      ],
+      link: "/services/commercial/office-space"
     },
     {
       title: "Retail Space Cleaning",
@@ -27,7 +28,8 @@ export default function CommercialServicesPage() {
         "Floor cleaning and maintenance",
         "Restroom sanitization",
         "Entrance and window cleaning"
-      ]
+      ],
+      link: "/services/commercial"
     },
     {
       title: "Industrial Cleaning",
@@ -37,7 +39,26 @@ export default function CommercialServicesPage() {
         "Equipment cleaning",
         "Loading dock maintenance",
         "Industrial floor care"
-      ]
+      ],
+      link: "/services/commercial"
+    }
+  ];
+
+  const specializedServices = [
+    {
+      title: "Art Studio Cleaning",
+      description: "Specialized cleaning for creative spaces that respects your artwork and materials.",
+      link: "/services/commercial/art-studios"
+    },
+    {
+      title: "Massage Parlor Cleaning",
+      description: "Hygienic cleaning for wellness spaces with attention to sanitization and ambiance.",
+      link: "/services/commercial/massage-parlors"
+    },
+    {
+      title: "Janitorial Services",
+      description: "Comprehensive facility maintenance for businesses of all sizes.",
+      link: "/services/commercial/janitorial-services"
     }
   ];
 
@@ -46,9 +67,18 @@ export default function CommercialServicesPage() {
       category="commercial"
       service="commercial cleaning"
       title="Commercial Cleaning Services"
-      description="FreshBay Cleaning Co. provides professional commercial cleaning services in Towson, Maryland. From office spaces to art studios, we keep your business spotless and professional."
+      description="FreshBay Cleaning Co. provides professional commercial cleaning services in Towson, Maryland. From office spaces to retail stores and industrial facilities, we keep your business spotless and professional."
     >
       <div className="container mx-auto px-4 py-16 sm:px-6 lg:px-8">
+        <motion.h2 
+          className="text-3xl font-bold text-center text-secondary mb-12"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          Our Commercial Cleaning Solutions
+        </motion.h2>
+        
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {commercialServices.map((service, index) => (
             <motion.div
@@ -58,31 +88,88 @@ export default function CommercialServicesPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <div className="glass-card group cursor-pointer h-full">
-                <h3 className="text-xl font-bold text-white mb-4 group-hover:text-secondary transition-colors">
+              <div className="glass-card group cursor-pointer h-full bg-white/10 hover:bg-white/15">
+                <h3 className="text-xl font-bold text-secondary mb-4 group-hover:text-white transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-white/80 mb-6 group-hover:text-white/90 transition-colors">
+                <p className="text-white/90 mb-6 group-hover:text-white transition-colors">
                   {service.description}
                 </p>
-                <ul className="space-y-3">
+                <ul className="space-y-3 mb-6">
                   {service.items.map((item, itemIndex) => (
                     <li key={itemIndex} className="flex items-start gap-3">
                       <CheckCircle className="h-5 w-5 text-secondary flex-shrink-0 mt-0.5" />
-                      <span className="text-white/80 group-hover:text-white/90 transition-colors">{item}</span>
+                      <span className="text-white/90 group-hover:text-white transition-colors">{item}</span>
                     </li>
                   ))}
                 </ul>
+                <div className="mt-auto">
+                  <Link 
+                    href={service.link}
+                    className="text-secondary hover:text-white transition-colors flex items-center gap-2"
+                  >
+                    Learn More
+                    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </Link>
+                </div>
               </div>
             </motion.div>
           ))}
         </div>
 
-        <div className="mt-16 flex justify-center gap-4">
+        <motion.h2 
+          className="text-3xl font-bold text-center text-secondary mt-20 mb-12"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          Specialized Commercial Services
+        </motion.h2>
+
+        <div className="grid gap-8 md:grid-cols-3">
+          {specializedServices.map((service, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <Link href={service.link} className="block">
+                <div className="glass-card group cursor-pointer h-full bg-white/10 hover:bg-white/15 text-center">
+                  <h3 className="text-xl font-bold text-secondary mb-4 group-hover:text-white transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="text-white/90 mb-6 group-hover:text-white transition-colors">
+                    {service.description}
+                  </p>
+                  <Button 
+                    variant="secondary"
+                    className="group mt-4"
+                  >
+                    <span className="flex items-center gap-2">
+                      Learn More
+                      <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    </span>
+                  </Button>
+                </div>
+              </Link>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.div 
+          className="mt-16 flex flex-col sm:flex-row justify-center gap-4"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
           <Button
             size="lg"
             asChild
-            className="rounded-full text-base group transition-all duration-300 hover:scale-105"
+            className="rounded-full text-base group transition-all duration-300 hover:scale-105 shadow-glow-strong"
             variant="secondary"
           >
             <Link href="/quote/commercial">
@@ -100,16 +187,18 @@ export default function CommercialServicesPage() {
           >
             <Link href="/book">Book Now</Link>
           </Button>
-        </div>
+        </motion.div>
 
-        <EnhancedCTASection
-          title="Ready to Transform Your Business Space?"
-          description="Get in touch with us today for a free quote and consultation."
-          primaryButtonText="Get a Free Quote"
-          primaryButtonLink="/quote/commercial"
-          secondaryButtonText="Learn More"
-          secondaryButtonLink="/about"
-        />
+        <div className="mt-24">
+          <EnhancedCTASection
+            title="Ready to Transform Your Business Space?"
+            description="Get in touch with us today for a free quote and consultation. Our commercial cleaning experts are ready to help you maintain a pristine business environment."
+            primaryButtonText="Get a Free Quote"
+            primaryButtonLink="/quote/commercial"
+            secondaryButtonText="Learn More"
+            secondaryButtonLink="/services"
+          />
+        </div>
       </div>
     </ServiceLayout>
   )

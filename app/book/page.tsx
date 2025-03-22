@@ -110,7 +110,24 @@ export default function BookPage(): React.ReactElement {
       <section className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl">
-            {!submitted ? (
+            {submitted ? (
+              <Card className="service-card">
+                <CardHeader>
+                  <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-secondary/20">
+                    <CheckCircle className="h-8 w-8 text-secondary" />
+                  </div>
+                  <CardTitle className="text-white text-2xl">Booking Confirmed!</CardTitle>
+                  <CardDescription className="text-white/70">
+                    Thank you for booking with FreshBay Cleaning Co. We'll contact you shortly to confirm your appointment.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex justify-center">
+                    <CheckCircle className="h-16 w-16 text-secondary" />
+                  </div>
+                </CardContent>
+              </Card>
+            ) : (
               <Card className="service-card">
                 <CardHeader>
                   <CardTitle className="text-white text-2xl">Book Your Service</CardTitle>
@@ -246,7 +263,6 @@ export default function BookPage(): React.ReactElement {
                                   </PopoverTrigger>
                                   <PopoverContent className="w-auto p-0" align="start">
                                     <Calendar
-                                      mode="single"
                                       selected={field.value}
                                       onSelect={field.onChange}
                                       disabled={(date) =>
@@ -309,20 +325,6 @@ export default function BookPage(): React.ReactElement {
                       </Button>
                     </form>
                   </Form>
-                </CardContent>
-              </Card>
-            ) : (
-              <Card className="service-card">
-                <CardHeader>
-                  <CardTitle className="text-white text-2xl">Booking Submitted!</CardTitle>
-                  <CardDescription className="text-white/70">
-                    Thank you for booking with FreshBay Cleaning Co. We'll contact you shortly to confirm your appointment.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex justify-center">
-                    <CheckCircle className="h-16 w-16 text-secondary" />
-                  </div>
                 </CardContent>
               </Card>
             )}

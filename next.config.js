@@ -7,12 +7,10 @@ const nextConfig = {
   },
   experimental: {
     optimizeCss: true,
-    turbo: true,
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
-  swcMinify: true,
 }
 
 module.exports = nextConfig

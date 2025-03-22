@@ -211,7 +211,12 @@
   }
 
   .text-balance {
-    text-wrap: balance;
+    /* Using standard text-align as fallback */
+    text-align: justify;
+    /* Adding the newer property with @supports for browsers that support it */
+    @supports (text-wrap: balance) {
+      text-wrap: balance;
+    }
   }
 
   .text-shadow {

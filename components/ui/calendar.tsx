@@ -2,25 +2,29 @@
 
 import * as React from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
-import { DayPicker } from "react-day-picker"
+import { DayPicker, SelectSingleEventHandler, DayPickerSingleProps } from "react-day-picker"
 
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 
-export type CalendarProps = React.ComponentProps<typeof DayPicker>
+type CalendarProps = Omit<DayPickerSingleProps, 'onSelect' | 'mode'> & {
+  onSelect?: (day: Date) => void
+}
 
 function Calendar({
   className,
   classNames,
   showOutsideDays = true,
+  onSelect,
+  selected,
   ...props
 }: CalendarProps) {
   const [isVisible, setIsVisible] = React.useState(true)
 
-  const handleSelect = (date: Date | undefined) => {
-    if (date) {
+  const handleDaySelect: SelectSingleEventHandler = (day) => {
+    if (day && onSelect) {
       setIsVisible(false)
-      // You can add any additional logic here, like updating a parent component's state
+      onSelect(day)
     }
   }
 
@@ -28,6 +32,7 @@ function Calendar({
 
   return (
     <DayPicker
+      mode="single"
       showOutsideDays={showOutsideDays}
       className={cn("p-3", className)}
       classNames={{
@@ -68,7 +73,7 @@ function Calendar({
         IconLeft: ({ ...props }) => <ChevronLeft className="h-4 w-4" />,
         IconRight: ({ ...props }) => <ChevronRight className="h-4 w-4" />,
       }}
-      onSelect={handleSelect}
+      onSelect={handleDaySelect}
       {...props}
     />
   )
@@ -76,3 +81,4 @@ function Calendar({
 Calendar.displayName = "Calendar"
 
 export { Calendar }
+export type { CalendarProps }
