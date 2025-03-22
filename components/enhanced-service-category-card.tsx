@@ -44,7 +44,7 @@ export function EnhancedServiceCategoryCard({
 
         {/* Content */}
         <div className="relative z-20 flex h-full flex-col justify-end p-8">
-          <h3 className="mb-2 text-3xl font-bold text-white transition-transform duration-500 group-hover:-translate-y-2">
+          <h3 className="mb-2 text-xl font-bold text-white transition-transform duration-500 group-hover:-translate-y-2">
             {title}
           </h3>
 
