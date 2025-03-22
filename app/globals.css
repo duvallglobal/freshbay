@@ -156,7 +156,7 @@
   }
 
   .glass-effect {
-    @apply bg-primary/98 backdrop-blur-md border-t border-white/10;
+    @apply bg-primary/90 backdrop-blur-md border-t border-white/10;
   }
 
   .container-custom {
