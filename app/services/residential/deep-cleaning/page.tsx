@@ -17,7 +17,7 @@ export default function DeepCleaningPage() {
     <div className="flex min-h-screen flex-col">
       <ServiceNavigation category="residential" service="deep-cleaning" />
       {/* Hero Section */}
-      <section className="relative mt-20">
+      <section className="relative z-10">
         <AnimatedGradientBackground intensity="medium" speed="slow">
           <div className="container relative mx-auto px-4 py-24 sm:px-6 lg:flex lg:h-[70vh] lg:items-center lg:px-8">
             <div className="mx-auto max-w-3xl text-center">

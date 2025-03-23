@@ -15,7 +15,7 @@ export default function ResidentialPage() {
       <ServiceNavigation category="residential" />
 
       {/* Hero Section */}
-      <section className="relative bg-primary py-20">
+      <section className="relative bg-primary py-20 z-10 z-10">
         <AnimatedGradientBackground intensity="medium" speed="slow">
           <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
