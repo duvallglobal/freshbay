@@ -140,23 +140,6 @@ export default function CommercialQuotePage() {
     setQuoteAmount(estimatedQuote)
     setQuoteGenerated(true)
 
-)
-
-    // Scroll to the top of the page
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-
-    // Scroll to the top of the page
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-
-    // Scroll to the top of the page
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-
-    // Scroll to the top of the page
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-
-    // Scroll to the top of the page
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-
     // Scroll to the top of the page
     window.scrollTo({ top: 0, behavior: 'smooth' })
 
@@ -174,7 +157,7 @@ export default function CommercialQuotePage() {
   return (
     <div className="flex min-h-screen flex-col">
       {/* Hero Section */}
-      <section className="bg-primary py-16 mt-20 mt-20">
+      <section className="bg-primary py-16 mt-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="text-4xl font-extrabold tracking-tight text-secondary sm:text-5xl">
@@ -611,7 +594,4 @@ export default function CommercialQuotePage() {
       </section>
     </div>
   )
-}
-  )
-}
 }

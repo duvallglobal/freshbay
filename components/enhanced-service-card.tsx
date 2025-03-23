@@ -1,16 +1,4 @@
-Services Page-
-
-the header vuts off the title of the page 
-
-Residential Service Button Learn more not funcitoning
-
- COmmercial services button learn more not funcitoning 
-
-Realtor services button learn more not funcitoning 
-
-View all Residential Services button not funcitoning 
-
-for the buttons on each service page book now and get a free quote, add some design to those. maybe the glass look or the wave look that the book now button has in the menu. "use client"
+"use client"
 
 import type React from "react"
 
@@ -46,8 +34,7 @@ export function EnhancedServiceCard({
       transition={{ duration: 0.5, delay: 0.1 * (index + 1) }}
       whileHover={{ y: -10 }}
       whileTap={{ scale: 0.98, y: -5 }}
-      whileTap={{ scale: 0.98, y: -5 }}
-      className="glass-card group h-full bg-[#050a50]/80 border border-white/20 shadow-[0_0_15px_rgba(0,0,0,0.3)] bg-[#050a50]/80 border border-white/20 shadow-[0_0_15px_rgba(0,0,0,0.3)]"
+      className="glass-card group h-full bg-[#050a50]/80 border border-white/20 shadow-[0_0_15px_rgba(0,0,0,0.3)]"
     >
       <div className="service-card h-full flex flex-col group">
         <div className="p-6 flex-grow">
@@ -60,7 +47,7 @@ export function EnhancedServiceCard({
               {icon}
             </motion.div>
           </div>
-          <h3 className="text-2xl font-bold text-white mb-4 text-center">{title}</h3>
+    className="glass-card group h-full      <h3 className="text-2xl font-bold text-white mb-4 text-center">{title}</h3>
           <p className="text-white/90 mb-6 text-center">{description}</p>
         </div>
         <div className="p-6 pt-0 mt-auto">
