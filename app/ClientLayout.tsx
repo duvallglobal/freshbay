@@ -2,24 +2,9 @@
 
 import type React from "react"
 import { useEffect } from "react"
-import { useEffect } from "react"
-import { useEffect } from "react"
-import { useEffect } from "react"
-import { useEffect } from "react"
-import { useEffect } from "react"
 import { Inter, Montserrat } from "next/font/google"
 import { useRouter, usePathname } from "next/navigation"
-import { useRouter, usePathname } from "next/navigation"
-import { useRouter, usePathname } from "next/navigation"
-import { useRouter, usePathname } from "next/navigation"
-import { useRouter, usePathname } from "next/navigation"
-import { useRouter, usePathname } from "next/navigation"
 import { EnhancedNav } from "@/components/enhanced-nav"
-import { MobileNavigation } from "@/components/mobile-navigation"
-import { MobileNavigation } from "@/components/mobile-navigation"
-import { MobileNavigation } from "@/components/mobile-navigation"
-import { MobileNavigation } from "@/components/mobile-navigation"
-import { MobileNavigation } from "@/components/mobile-navigation"
 import { MobileNavigation } from "@/components/mobile-navigation"
 
 const inter = Inter({
@@ -39,32 +24,6 @@ export default function ClientLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const router = useRouter()
-  const pathname = usePathname()
-
-  // Improve navigation performance
-  useEffect(() => {
-    // Prefetch common routes
-    router.prefetch('/book')
-    router.prefetch('/quote')
-    router.prefetch('/contact')
-    router.prefetch('/services/residential')
-    router.prefetch('/services/commercial')
-    router.prefetch('/services/realtor')
-
-    // Scroll to top on navigation
-    window.scrollTo(0, 0)
-
-    // Add event listener for back/forward navigation
-    const handlePopState = () => {
-      // Scroll to top and force a re-render
-      window.scrollTo(0, 0)
-    }
-
-    window.addEventListener('popstate', handlePopState)
-    return () => window.removeEventListener('popstate', handlePopState)
-  }, [router, pathname])
-
   const router = useRouter()
   const pathname = usePathname()
 

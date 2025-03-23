@@ -8,35 +8,10 @@ const nextConfig = {
   experimental: {
     optimizeCss: true,
     scrollRestoration: true,
-    scrollRestoration: true,
-    scrollRestoration: true,
-    scrollRestoration: true,
-    scrollRestoration: true,
-    scrollRestoration: true,
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
-  // Improve performance
-  swcMinify: true,
-  reactStrictMode: true,
-  poweredByHeader: false,
-  // Improve performance
-  swcMinify: true,
-  reactStrictMode: true,
-  poweredByHeader: false,
-  // Improve performance
-  swcMinify: true,
-  reactStrictMode: true,
-  poweredByHeader: false,
-  // Improve performance
-  swcMinify: true,
-  reactStrictMode: true,
-  poweredByHeader: false,
-  // Improve performance
-  swcMinify: true,
-  reactStrictMode: true,
-  poweredByHeader: false,
   // Improve performance
   swcMinify: true,
   reactStrictMode: true,

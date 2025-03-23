@@ -124,7 +124,9 @@ export function EnhancedCTASection({
                 asChild
                 size="lg"
                 variant="outline"
-                className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 rounded-full bg-white/10 text-white border-white/20/20/20 hover:bg-white/20 hover:text-secondary transition-all duration-300 w-full sm:w-auto font-medium glass-effect shadow-[0_0_15px_rgba(0,0,0,0.3)] hover:shadow-[0_0_25px_rgba(255,255,255,0.2)]>
+                className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 rounded-full bg-white/10 text-white border-white/20 hover:bg-white/20 hover:text-secondary transition-all duration-300 w-full sm:w-auto font-medium glass-effect shadow-[0_0_15px_rgba(0,0,0,0.3)] hover:shadow-[0_0_25px_rgba(255,255,255,0.2)]"
+              >
+                <Link href={secondaryButtonLink}>
                   <span className="flex items-center gap-2 group">
                     {secondaryButtonText}
                     <svg
