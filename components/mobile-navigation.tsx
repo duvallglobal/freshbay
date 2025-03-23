@@ -21,8 +21,8 @@ export function MobileNavigation() {
           <Menu className="h-6 w-6" />
         </Button>
       </SheetTrigger>
-      <SheetContent side="left" className="w-[90vw] max-w-[350px] pt-8 pb-6">
-        <div className="flex flex-col gap-6 py-4">
+      <SheetContent side="left" className="w-[90vw] max-w-[350px] pt-8 pb-6 bg-[#050a50] border-r-white/20 shadow-[inset_0_0_15px_rgba(0,0,0,0.5)]">
+        <div className="flex flex-col gap-6 py-4 bg-[#050a50] border-r-white/20 shadow-[inset_0_0_15px_rgba(0,0,0,0.5)]">
           <div className="flex items-center justify-between">
             <Link href="/" className="flex items-center gap-2 font-bold text-xl" onClick={() => setOpen(false)}>
               <span className="text-primary">FreshBay</span> Cleaning Co.

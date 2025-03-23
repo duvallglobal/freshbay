@@ -34,10 +34,51 @@ export function RevealOnScroll({
   }
 
   useEffect(() => {
+    // On mobile, we'll use a lower threshold to make animations trigger more easily
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768// On mobile, we'll use a lower threshold to make animations trigger more easily
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768
+    const mobileThreshold = Math.max(0.01, threshold / 2) // Lower threshold for mobile
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+    // On mobile, we'll use a lower threshold to make animations trigger more easily
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768
+    const mobileThreshold = Math.max(0.01, threshold / 2) // Lower threshold for mobile
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true)
+          // Small delay to ensure smooth animation
+          setTimeout(() => {
+            setIsVisible(true)
+          }, 50)
+    if (entry.isIntersecting) {
+          // Small delay to ensure smooth animation
+          setTimeout(() => {
+            setIsVisible(true)
+          }, 50)
+
+    const mobileThreshold = Math.max(0.01, threshold / 2) // Lower threshold for mobile
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+    // On mobile, we'll use a lower threshold to make animations trigger more easily
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768
+    const mobileThreshold = Math.max(0.01, threshold / 2) // Lower threshold for mobile
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          // Small delay to ensure smooth animation
+          setTimeout(() => {
+            setIsVisible(true)
+          }, 50)
+    if (entry.isIntersecting) {
+          // Small delay to ensure smooth animation
+          setTimeout(() => {
+            setIsVisible(true)
+          }, 50)
+
           if (once && ref.current) {
             observer.unobserve(ref.current)
           }
@@ -46,8 +87,8 @@ export function RevealOnScroll({
         }
       },
       {
-        threshold,
-        rootMargin: "0px",
+        threshold: isMobile ? mobileThreshold : threshold,
+        rootMargin: isMobile ? "0px 0px -50px 0px" : "0px", // Trigger earlier on mobile
       },
     )
 

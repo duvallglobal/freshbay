@@ -3,7 +3,7 @@
   "postcss.validate": false,
   "stylelint.validate": ["css", "scss", "postcss"],
   "editor.codeActionsOnSave": {
-    "source.fixAll.stylelint": true
+    "source.fixAll.stylelint": "explicit"
   },
   "files.associations": {
     "*.css": "postcss"

@@ -41,23 +41,23 @@ export default function ServicesPage() {
               title="Residential Services"
               description="Professional cleaning services for homes and apartments, from deep cleaning to recurring maintenance."
               imageSrc="/placeholder.svg?height=600&width=800"
-              href="/residential"
-              category="residential"
+              href="/services/seservices/rvices/seservices/rvices/services/residential"
+              category="services/residential"
             />
             <ServiceCategoryCard
               title="Commercial Services"
               description="Specialized cleaning for businesses, including offices, art studios, and wellness centers."
               imageSrc="/placeholder.svg?height=600&width=800"
-              href="/commercial"
-              category="commercial"
+              href="/services/services/services/services/services/services/commercial"
+              category="services/commercial"
             />
             <ServiceCategoryCard
               title="Realtor Services"
               description="Comprehensive cleaning solutions for real estate professionals, property managers, and landlords."
               imageSrc="/placeholder.svg?height=600&width=800"
-              href="/realtors"
-              category="realtor"
-            />
+              href="/services/services/services/services/services/realtor"
+          category="services/services/realtor"
+          />
           </div>
         </div>
       </section>
@@ -135,7 +135,7 @@ export default function ServicesPage() {
           </div>
           <div className="mt-8 text-center">
             <Button asChild>
-              <Link href="/residential">View All Residential Services</Link>
+              <Link href="/seservices/rvices/seservices/rvices/seservices/rvices/services/residential">View All Residential Services</Link>
             </Button>
           </div>
         </div>
@@ -209,7 +209,7 @@ export default function ServicesPage() {
               </CardContent>
               <CardFooter>
                 <Button asChild variant="outline" className="w-full">
-                  <Link href="/services/commercial/janitorial-services">
+                  <Link href="/services/services/commercial/janitorial-services">
                     Learn More <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
@@ -218,7 +218,7 @@ export default function ServicesPage() {
           </div>
           <div className="mt-8 text-center">
             <Button asChild>
-              <Link href="/commercial">View All Commercial Services</Link>
+              <Link href="/services/services/services/services/services/services/commercial">View All Commercial Services</Link>
             </Button>
           </div>
         </div>
@@ -297,7 +297,7 @@ export default function ServicesPage() {
           </div>
           <div className="mt-8 text-center">
             <Button asChild>
-              <Link href="/realtors">View All Realtor Services</Link>
+              <Link href="/services/services/services/services/realtor">w All Realtor Services</Link>
             </Button>
           </div>
         </div>

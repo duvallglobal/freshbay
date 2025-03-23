@@ -13,10 +13,16 @@ interface CardHoverEffectProps {
 
 export function CardHoverEffect({ children, className, glowColor = "rgba(14, 165, 233, 0.15)" }: CardHoverEffectProps) {
   const [position, setPosition] = useState({ x: 0, y: 0 })
-  const [isHovering, setIsHovering] = useState(false)
+  const [isHovering && !isTouched, setIsHovering] = useState(false)
+  const [isTouched, setIsTouched] = useState(false)
+  const [isTouched, setIsTouched] = useState(false)
+  const [isTouched, setIsTouched] = useState(false)
+  const [isTouched, setIsTouched] = useState(false)
+  const [isTouched, setIsTouched] = useState(false)
+  const [isTouched, setIsTouched] = useState(false)
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!isHovering) return
+    if (!(((isHovering && !isTouched && !isTouched) return
 
     const rect = e.currentTarget.getBoundingClientRect()
     const x = e.clientX - rect.left
@@ -25,18 +31,69 @@ export function CardHoverEffect({ children, className, glowColor = "rgba(14, 165
     setPosition({ x, y })
   }
 
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    setIsTouched(true)
+
+    const rect = e.currentTarget.getBoundingClientRect()
+    const touch = e.touches[0]
+    const x = touch.clientX - rect.left
+    const y = touch.clientY - rect.top
+
+    setPosition({ x, y })
+  }
+
+  const handleTouchEnd = () => {
+    // Keep the effect for a short time after touch ends for better UX
+    setTimeout(() => setIsTouched(false), 500)
+  }
+
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    setIsTouched(true)
+
+    const rect = e.currentTarget.getBoundingClientRect()
+    const touch = e.touches[0]
+    const x = touch.clientX - rect.left
+    const y = touch.clientY - rect.top
+
+    setPosition({ x, y })
+  }
+
+  const handleTouchEnd = () => {
+    // Keep the effect for a short time after touch ends for better UX
+    setTimeout(() => setIsTouched(false), 500)
+  }
+
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    setIsTouched(true)
+
+    const rect = e.currentTarget.getBoundingClientRect()
+    const touch = e.touches[0]
+    const x = touch.clientX - rect.left
+    const y = touch.clientY - rect.top
+
+    setPosition({ x, y })
+  }
+
+  const handleTouchEnd = () => {
+    // Keep the effect for a short time after touch ends for better UX
+    setTimeout(() => setIsTouched(false), 500)
+  }
+
   return (
     <div
       className={cn(
         "relative overflow-hidden rounded-lg transition-all duration-200",
-        isHovering ? "scale-[1.02]" : "scale-100",
+        (isHovering || isTouched) ? "scale-[1.02]" : "scale-100",
         className,
       )}
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
       onMouseMove={handleMouseMove}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
       style={{
-        background: isHovering
+        background: (isHovering || isTouched)
           ? `radial-gradient(circle at ${position.x}px ${position.y}px, ${glowColor} 0%, transparent 60%)`
           : "transparent",
       }}

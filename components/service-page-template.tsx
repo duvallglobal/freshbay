@@ -59,7 +59,7 @@ export function ServicePageTemplate({
       <ServiceNavigation category={category} service={service} />
       
       {/* Hero Section */}
-      <section className="hero-section">
+      <section className="hero-section pt-24 pt-24 pt-24 pt-24 pt-24 pt-24 pt-24">
         <AnimatedGradientBackground intensity="medium" speed="slow">
           <div className="container relative mx-auto px-4 sm:px-6 lg:flex lg:h-[70vh] lg:items-center lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
@@ -88,19 +88,20 @@ export function ServicePageTemplate({
                     asChild
                     className="rounded-full text-base group transition-all duration-300 hover:scale-105"
                     variant="secondary"
+                    variant="secondary"
                   >
                     <Link href={quoteLink}>
-                      <span className="flex items-center gap-2">
+                      <span className="flex items-center gap-2 glass-effect border border-white/20 shadow-[0_0_15px_rgba(0,0,0,0.3)] hover:shadow-[0_0_25px_rgba(255,255,255,0.2)]">
                         Get a Free Quote
                         <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                       </span>
                     </Link>
                   </Button>
                   <Button
-                    size="lg"
-                    variant="outline"
+                    size="lg glass-effect border border-white/20 shadow-[0_0_15px_rgba(0,0,0,0.3)] hover:shadow-[0_0_25px_rgba(255,255,255,0.2)]"
+                    variant="outline glass-effect border border-white/20 shadow-[0_0_15px_rgba(0,0,0,0.3)] hover:shadow-[0_0_25px_rgba(255,255,255,0.2)]"
                     asChild
-                    className="rounded-full bg-white/10 text-base text-white hover:bg-white/20 transition-all duration-300 hover:scale-105"
+                    className="rounded-full bg-white/10 text-base text-white hover:bg-white/20 transition-all duration-300 hover:scale-105 glass-effect border border-white/20 shadow-[0_0_15px_rgba(0,0,0,0.3)] hover:shadow-[0_0_25px_rgba(255,255,255,0.2)]"
                   >
                     <Link href="/book">Book Now</Link>
                   </Button>

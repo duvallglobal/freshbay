@@ -124,9 +124,26 @@ export function EnhancedCTASection({
                 asChild
                 size="lg"
                 variant="outline"
-                className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 rounded-full bg-transparent text-white border-white hover:bg-white/10 hover:text-secondary transition-colors duration-300 w-full sm:w-auto font-medium"
-              >
-                <Link href={secondaryButtonLink}>{secondaryButtonText}</Link>
+                className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 rounded-full bg-white/10 text-white border-white/20/20/20 hover:bg-white/20 hover:text-secondary transition-all duration-300 w-full sm:w-auto font-medium glass-effect shadow-[0_0_15px_rgba(0,0,0,0.3)] hover:shadow-[0_0_25px_rgba(255,255,255,0.2)]>
+                  <span className="flex items-center gap-2 group">
+                    {secondaryButtonText}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1"
+                    >
+                      <path d="M5 12h14" />
+                      <path d="m12 5 7 7-7 7" />
+                    </svg>
+                  </span>
+                </Link>
               </Button>
             </motion.div>
           </div>

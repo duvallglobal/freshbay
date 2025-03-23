@@ -82,6 +82,21 @@ export default function BookPage(): React.ReactElement {
         throw new Error('Failed to submit booking')
       }
 
+      // Scroll to the top of the page
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+
+      // Scroll to the top of the page
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+
+      // Scroll to the top of the page
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+
+      // Scroll to the top of the page
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+
+      // Scroll to the top of the page
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+
       setSubmitted(true)
     } catch (error) {
       console.error('Error submitting booking:', error)

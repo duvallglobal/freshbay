@@ -115,6 +115,15 @@ export default function DeepCleaningQuotePage() {
     setQuoteAmount(estimatedQuote)
     setQuoteGenerated(true)
 
+    // Scroll to the top of the page
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+
+    // Scroll to the top of the page
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+
+    // Scroll to the top of the page
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+
     // In a real application, you would also send this data to your backend
     console.log(data)
   }
@@ -576,4 +585,5 @@ export default function DeepCleaningQuotePage() {
     </div>
   )
 }
+
 

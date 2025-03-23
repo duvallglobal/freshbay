@@ -28,7 +28,7 @@ export function EnhancedTestimonialCard({
       transition={{ duration: 0.5, delay: 0.1 * (index + 1) }}
       whileHover={{ y: -10 }}
     >
-      <div className="glass-card h-full">
+      <div className="glass-card h-full bg-[#050a50]/80 border border-white/20 shadow-[0_0_15px_rgba(0,0,0,0.3)] bg-[#050a50]/80 border border-white/20 shadow-[0_0_15px_rgba(0,0,0,0.3)] bg-[#050a50]/80 border border-white/20 shadow-[0_0_15px_rgba(0,0,0,0.3)] bg-[#050a50]/80 border border-white/20 shadow-[0_0_15px_rgba(0,0,0,0.3)] bg-[#050a50]/80 border border-white/20 shadow-[0_0_15px_rgba(0,0,0,0.3)] bg-[#050a50]/80 border border-white/20 shadow-[0_0_15px_rgba(0,0,0,0.3)]">
         <div className="p-8">
           <div className="mb-4 flex">
             {[...Array(5)].map((_, i) => (

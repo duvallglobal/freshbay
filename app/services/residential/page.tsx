@@ -19,7 +19,7 @@ export default function ResidentialPage() {
       <ServiceNavigation category="residential" />
 
       {/* Hero Section */}
-      <section className="relative bg-primary py-20">
+      <section className="relative bg-primary py-20 pt-24 pt-24 pt-24 pt-24 pt-24 pt-24 pt-24">
         <AnimatedGradientBackground intensity="medium" speed="slow">
           <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
@@ -55,7 +55,12 @@ export default function ResidentialPage() {
                     asChild
                     className="rounded-full bg-white/10 text-base text-white hover:bg-white/20 transition-all duration-300 hover:scale-105"
                   >
-                    <Link href="/book">Book Now</Link>
+                    <Link href="/book">
+                      <span className="flex items-center gap-2">
+                        Book Now
+                        <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                      </span>
+                    </Link>
                   </Button>
                 </div>
               </RevealOnScroll>

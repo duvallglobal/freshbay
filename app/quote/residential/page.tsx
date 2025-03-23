@@ -150,6 +150,26 @@ export default function ResidentialQuotePage() {
     setQuoteAmount(estimatedQuote)
     setQuoteGenerated(true)
 
+)
+
+    // Scroll to the top of the page
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+
+    // Scroll to the top of the page
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+
+    // Scroll to the top of the page
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+
+    // Scroll to the top of the page
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+
+    // Scroll to the top of the page
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+
+    // Scroll to the top of the page
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+
     // In a real application, you would also send this data to your backend
     console.log(data)
   }
@@ -197,7 +217,7 @@ return (
       </section>
 
       {/* Quote Form Section */}
-      <section className="py-16">
+      <section className="py-8">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl">
             {!quoteGenerated ? (
@@ -427,7 +447,7 @@ return (
                                   <RadioGroup
                                     onValueChange={field.onChange}
                                     defaultValue={field.value}
-                                    className="flex flex-col space-y-1 sm:flex-row sm:space-x-4 sm:space-y-0"
+                                    className="flex flex-col space-y-3 sm:flex-row sm:space-x-6 sm:space-y-0"
                                   >
                                     <FormItem className="flex items-center space-x-3 space-y-0">
                                       <FormControl>
@@ -647,4 +667,9 @@ return (
     </div>
   )
 }
+
+}
+
+}
+
 
