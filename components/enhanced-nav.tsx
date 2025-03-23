@@ -92,7 +92,7 @@ export function EnhancedNav() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled ? "glass-nav" : "bg-primary/80 backdrop-blur-sm"
       }`}
-      style={{ minHeight: '6rem' }}
+backgroundColor: '#0A1172' }}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-24">
@@ -113,7 +113,7 @@ export function EnhancedNav() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-8 mt-2">
             <motion.div variants={itemVariants}>
               <Link href="/" className="nav-link">
                 HOME
@@ -135,7 +135,7 @@ export function EnhancedNav() {
                     animate="visible"
                     exit="hidden"
                     variants={dropdownVariants}
-                    className="absolute left-0 mt-2 w-64 rounded-xl shadow-lg bg-card/95 backdrop-blur-md border border-white/10 overflow-hidden z-50"
+                    className="absolute left-0 mt-4 w-64 rounded-xl shadow-lg bg-[#0A1172] border border-white/10 overflow-hidden z-50"
                     onMouseEnter={() => setActiveDropdown("services")}
                   >
                     <div className="py-2 px-1">
@@ -251,7 +251,7 @@ export function EnhancedNav() {
           {/* Mobile Menu Button */}
           <motion.button
             variants={itemVariants}
-            className="md:hidden text-white hover:text-secondary transition-colors duration-200"
+            className="md:hidden text-white hover:text-secondary transition-colors duration-200 mt-2"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -267,7 +267,7 @@ export function EnhancedNav() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-footer"
+            className="md:hidden bg-[#0A1172]"
           >
             <div className="px-2 pt-2 pb-3 space-y-1">
               <Link

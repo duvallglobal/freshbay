@@ -19,16 +19,7 @@ export function ServiceCategoryCard({
   category = "residential",
 }: ServiceCategoryCardProps) {
   return (
-    <div className="service-card group">
-      <div className="relative h-48 mb-6 overflow-hidden rounded-lg">
-        <Image
-          src={imageSrc || "/placeholder.svg?height=600&width=800"}
-          alt={title}
-          fill
-          className="object-cover transition-transform duration-500 group-hover:scale-110"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent" />
-      </div>
+    <div className="service-card group rounded-xl p-6">
       <h3 className="text-2xl font-bold mb-4">{title}</h3>
       <p className="text-white/90 mb-6">{description}</p>
       <div className="flex gap-4">

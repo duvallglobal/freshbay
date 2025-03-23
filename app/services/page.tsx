@@ -10,14 +10,14 @@ export default function ServicesPage() {
   return (
     <div className="flex min-h-screen flex-col">
       {/* Hero Section */}
-      <section className="bg-muted py-16">
+      <section className="bg-muted py-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumb items={[{ label: "Services" }]} />
-          <div className="mx-auto max-w-3xl text-center mt-8">
+          <div className="mx-auto max-w-3xl text-center mt-6">
             <h1 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl md:text-5xl">
               Our Cleaning Services
             </h1>
-            <p className="mt-6 text-lg text-muted-foreground">
+            <p className="mt-4 text-lg text-muted-foreground">
               FreshBay Cleaning Co. offers a comprehensive range of cleaning services to meet all your needs in Towson,
               Maryland and surrounding areas.
             </p>
@@ -26,9 +26,9 @@ export default function ServicesPage() {
       </section>
 
       {/* Service Categories Section */}
-      <section className="bg-background py-16">
+      <section className="bg-background py-10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12 text-center">
+          <div className="mb-8 text-center">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Service Categories</h2>
             <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
               We offer specialized cleaning services for different needs. Explore our service categories to find the
@@ -36,7 +36,7 @@ export default function ServicesPage() {
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-3">
             <ServiceCategoryCard
               title="Residential Services"
               description="Professional cleaning services for homes and apartments, from deep cleaning to recurring maintenance."
@@ -63,16 +63,16 @@ export default function ServicesPage() {
       </section>
 
       {/* Residential Services Section */}
-      <section className="bg-muted py-16">
+      <section className="bg-muted py-10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12 text-center">
+          <div className="mb-8 text-center">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Residential Services</h2>
             <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
               Keep your home clean, healthy, and comfortable with our residential cleaning services.
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-3">
             <Card>
               <CardHeader>
                 <CardTitle>Standard Cleaning</CardTitle>
@@ -142,16 +142,16 @@ export default function ServicesPage() {
       </section>
 
       {/* Commercial Services Section */}
-      <section className="bg-background py-16">
+      <section className="bg-background py-10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12 text-center">
+          <div className="mb-8 text-center">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Commercial Services</h2>
             <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
               Keep your business environment clean, professional, and welcoming with our commercial cleaning services.
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             <Card>
               <CardHeader>
                 <CardTitle>Office Space</CardTitle>
@@ -225,16 +225,16 @@ export default function ServicesPage() {
       </section>
 
       {/* Realtor Services Section */}
-      <section className="bg-muted py-16">
+      <section className="bg-muted py-10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12 text-center">
+          <div className="mb-8 text-center">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Realtor Services</h2>
             <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
               Specialized cleaning services for realtors, landlords, and property managers.
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-3">
             <Card>
               <CardHeader>
                 <CardTitle>Pre-Listing Cleaning</CardTitle>
@@ -304,7 +304,7 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-primary text-primary-foreground py-16">
+      <section className="bg-primary text-primary-foreground py-10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Ready for a Cleaner Space?</h2>

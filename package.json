@@ -42,6 +42,7 @@
     "clsx": "^2.1.1",
     "cmdk": "1.0.4",
     "critters": "^0.0.23",
+    "d3-array": "^3.2.4",
     "date-fns": "latest",
     "embla-carousel-react": "8.5.1",
     "framer-motion": "latest",
@@ -61,7 +62,8 @@
     "zod": "latest"
   },
   "devDependencies": {
-    "@stackbit/types": "^2.1.12",
+    "@stackbit/types": "^2.1.14",
+    "@types/d3-array": "^3.2.1",
     "@types/jest": "^29.5.12",
     "@types/node": "^22.13.11",
     "@types/react": "^19.0.12",

@@ -1,8 +1,9 @@
 {
-    "css.validate": false,
-    "less.validate": false,
-    "scss.validate": false,
+ npm.packageManager": "npm",
     "postcss.validate": false,
-    "zencoder.enableRepoIndexing": true,
-    "npm.packageManager": "npm"
+    "npm.packageManager": "npm",
+    "stylelint.validate": ["css", "scss", "postcss"],
+    "editor.codeActionsOnSave": {
+    npm.packageManager": "npm"  npm.packageManager": "npm"  "source.fixAll.stylelint": true
+    }
 }

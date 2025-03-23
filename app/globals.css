@@ -1,3 +1,8 @@
+/*
+ * These are Tailwind CSS directives - they are valid in this project
+ * because they are processed by the Tailwind CSS compiler.
+ * You can safely ignore any linting errors for these lines.
+ */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -139,7 +144,7 @@
 
 @layer components {
   .nav-link {
-    @apply text-white hover:text-secondary transition-colors duration-200 text-sm md:text-base font-sans;
+    @apply text-white hover:text-secondary transition-colors duration-200 text-sm md:text-base font-sans py-1;
   }
 
   .cta-button {
@@ -212,7 +217,7 @@
   }
 
   .service-card {
-    @apply bg-card text-white p-4 md:p-6 rounded-xl shadow-glow hover:shadow-lg transition-all duration-300 border border-white/10 backdrop-blur-sm mb-6;
+    @apply bg-card text-white p-6 rounded-xl shadow-glow hover:shadow-lg transition-all duration-300 border border-white/10 h-full flex flex-col justify-between;
   }
 
   .section-title {
