@@ -12,7 +12,17 @@ export function EnhancedNav() {
   const [scrolled, setScrolled] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
 
+  // Initialize scrolled state to false to match server rendering
+  const [hasWindow, setHasWindow] = useState(false)
+
+  // This effect runs once after the component mounts
   useEffect(() => {
+    setHasWindow(true)
+  }, [])
+
+  useEffect(() => {
+    if (!hasWindow) return
+
     const handleScroll = () => {
       if (window.scrollY > 20) {
         setScrolled(true)
@@ -22,11 +32,16 @@ export function EnhancedNav() {
     }
 
     window.addEventListener("scroll", handleScroll)
+    // Run once on mount to set initial state
+    handleScroll()
+
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  }, [hasWindow])
 
   // Handle mouse leave for dropdown
   useEffect(() => {
+    if (!hasWindow) return
+
     const handleMouseLeave = (e: MouseEvent) => {
       const servicesDropdown = document.querySelector('.group')
       const dropdown = document.querySelector('.group .absolute')
@@ -40,13 +55,9 @@ export function EnhancedNav() {
       }
     }
 
-    if (typeof window !== 'undefined') {
-      document.addEventListener('mousemove', handleMouseLeave)
-      return () => document.removeEventListener('mousemove', handleMouseLeave)
-    }
-
-    return undefined;
-  }, [activeDropdown])
+    document.addEventListener('mousemove', handleMouseLeave)
+    return () => document.removeEventListener('mousemove', handleMouseLeave)
+  }, [activeDropdown, hasWindow])
 
   const toggleDropdown = (dropdown: string) => {
     if (activeDropdown === dropdown) {
@@ -92,7 +103,7 @@ export function EnhancedNav() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled ? "glass-nav" : "bg-primary/80 backdrop-blur-sm"
       }`}
-backgroundColor: '#0A1172' }}
+      style={{ backgroundColor: '#0A1172' }}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-24">

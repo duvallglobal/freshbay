@@ -3,7 +3,6 @@
 import type React from "react"
 import { Inter, Montserrat } from "next/font/google"
 import { EnhancedNav } from "@/components/enhanced-nav"
-import "./globals.css"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -86,7 +85,7 @@ export default function ClientLayout({
                   </a>
                 </div>
                 <p className="text-white/70 mt-6">
-                  © {new Date().getFullYear()} FreshBay Cleaning Co. All rights reserved.
+                  © 2024 FreshBay Cleaning Co. All rights reserved.
                 </p>
               </div>
               <div>
@@ -306,6 +305,4 @@ export default function ClientLayout({
     </html>
   )
 }
-
-import "./globals.css"
 
