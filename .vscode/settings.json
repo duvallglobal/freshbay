@@ -1,9 +1,12 @@
 {
- npm.packageManager": "npm",
-    "postcss.validate": false,
-    "npm.packageManager": "npm",
-    "stylelint.validate": ["css", "scss", "postcss"],
-    "editor.codeActionsOnSave": {
-    npm.packageManager": "npm"  npm.packageManager": "npm"  "source.fixAll.stylelint": true
-    }
+  "npm.packageManager": "npm",
+  "postcss.validate": false,
+  "stylelint.validate": ["css", "scss", "postcss"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": true
+  },
+  "files.associations": {
+    "*.css": "postcss"
+  },
+  "css.validate": false
 }
