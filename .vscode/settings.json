@@ -8,5 +8,6 @@
   "files.associations": {
     "*.css": "postcss"
   },
-  "css.validate": false
+  "css.validate": false,
+  "zencoder.enableRepoIndexing": true
 }

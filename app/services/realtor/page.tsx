@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight, CheckCircle } from "lucide-react"
@@ -9,6 +11,7 @@ import { CardHoverEffect } from "@/components/ui/card-hover-effect"
 import { ServiceNavigation } from "@/components/service-navigation"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { EnhancedCTASection } from "@/components/enhanced-cta-section"
+import { motion } from "framer-motion"
 
 export default function RealtorsPage() {
   return (

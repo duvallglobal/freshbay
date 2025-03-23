@@ -1,4 +1,7 @@
+"use client"
+
 import Link from "next/link"
+import Image from "next/image"
 import { ArrowRight, CheckCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { RevealOnScroll } from "@/components/ui/reveal-on-scroll"
@@ -8,6 +11,7 @@ import { CardHoverEffect } from "@/components/ui/card-hover-effect"
 import { ServiceNavigation } from "@/components/service-navigation"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { EnhancedCTASection } from "@/components/enhanced-cta-section"
+import { motion } from "framer-motion"
 
 export default function ResidentialPage() {
   return (
@@ -15,7 +19,7 @@ export default function ResidentialPage() {
       <ServiceNavigation category="residential" />
 
       {/* Hero Section */}
-      <section className="relative bg-primary py-20 z-10 z-10">
+      <section className="relative bg-primary py-20">
         <AnimatedGradientBackground intensity="medium" speed="slow">
           <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
