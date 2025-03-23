@@ -9,8 +9,8 @@
 
 @layer utilities {
   .glass-effect {
-    @apply bg-white/10 backdrop-blur-md border border-white/20 shadow-lg;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    @apply bg-primary/95 backdrop-blur-md border border-white/10 shadow-lg;
+    box-shadow: 0 8px 32px 0 rgba(10, 17, 114, 0.37);
   }
   
   .glass-effect-dark {
@@ -39,7 +39,7 @@
   }
 
   .glass-nav {
-    @apply glass-effect sticky top-0 z-50;
+    @apply bg-primary/95 backdrop-blur-md border-b border-white/10 shadow-lg;
     animation: navBlur 0.5s ease-in-out;
   }
 
@@ -54,7 +54,7 @@
     }
     to {
       backdrop-filter: blur(10px);
-      background-color: rgba(10, 17, 114, 0.98);
+      background-color: rgba(10, 17, 114, 0.95);
     }
   }
 }
@@ -144,7 +144,7 @@
 
 @layer components {
   .nav-link {
-    @apply text-white hover:text-secondary transition-colors duration-200 text-sm md:text-base font-sans py-1;
+    @apply text-white hover:text-secondary transition-colors duration-200 text-sm md:text-base font-sans py-1 font-medium;
   }
 
   .cta-button {
@@ -197,7 +197,7 @@
   }
 
   .glass-effect {
-    @apply bg-primary/90 backdrop-blur-md border-t border-white/10;
+    @apply bg-primary/95 backdrop-blur-md border-t border-white/10 shadow-lg;
   }
 
   .container-custom {
